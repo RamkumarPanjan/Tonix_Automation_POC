@@ -4,3 +4,4 @@ XLSX/
 Analysed_Reports/
 target/
 *.class
+test-output/
