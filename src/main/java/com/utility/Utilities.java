@@ -250,6 +250,29 @@ public class Utilities extends ExtentReporter {
 		}
 	}
 
+	/**
+	 * Check element present.
+	 *
+	 * @param byLocator the by locator
+	 * @return true, if successful
+	 */
+	public boolean ifElementPresent(By byLocator, String validationtext) throws Exception {
+
+		try {
+			WebElement element = findElement(byLocator);
+			softAssert.assertEquals(element.isDisplayed(), true, "" + validationtext + " " + " is displayed");
+			logger.info(validationtext + " is displayed");
+			extent.extentLoggerPass("checkElementPresent", validationtext + " is displayed");
+			return true;
+		} catch (Exception e) {
+//			softAssert.assertEquals(false, true, validationtext + " " + " is not displayed");
+//			softAssert.assertAll();
+//			logger.error(validationtext + " is not displayed");
+//			extent.extentLoggerFail("checkElementPresent", validationtext + " is not displayed");
+			return false;
+		}
+	}
+
 	public boolean verifyElementExist(By byLocator, String str) throws Exception {
 		try {
 			WebElement element = findElement(byLocator);

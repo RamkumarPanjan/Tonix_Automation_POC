@@ -1,0 +1,6 @@
+# Compiled class file
+Reports/
+XLSX/
+Analysed_Reports/
+target/
+*.class
