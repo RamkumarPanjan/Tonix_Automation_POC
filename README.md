@@ -1,4 +1,4 @@
-# RingPay
+# Tonik
 
 ## Getting started
 
