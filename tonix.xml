@@ -6,7 +6,7 @@
 		<parameter name="runMode" value="${runMode}"/> <parameter name="runModule" 
 		value="${runModule}"/> <parameter name="browserType" value="${browserType}"/> 
 		<parameter name="url" value="${url}" />-->
-		
+		 
 	<parameter name="userType" value="Guest" />  
 	<parameter name="runModule" value="Suite" />
 	<parameter name="runMode" value="Suites" /> 
@@ -17,7 +17,7 @@
 	
 	<listeners>
 		<listener class-name="com.extent.ExtentReporter" />
-	</listeners>
+	</listeners> 
 
 
 	<test name="Tonix">

@@ -6,13 +6,24 @@ import com.extent.ExtentReporter;
 
 public class TonixTestFlow extends BaseTestCase {
 
-	@Test(priority = 0)
+//	@Test(priority = 0)
 	@Parameters({"userType"})
     public void stashFlow() throws Exception {
 		//welcomePage.RingPayAppLaunch();
 		loginPage.performLogin();
-		mainPage.clickTotalStashBalance();
-		ExtentReporter.jiraID = "PP-28";
+		stashHomePage.stashHomePageTest();
+		stashSetupPage.stashSetupPage();
+		
+	//	mainPage.clickTotalStashBalance();
+//		ExtentReporter.jiraID = "PP-28";
 	}
 
+	@Test
+	public void closeStashFlow() throws Exception {
+		
+		loginPage.performLogin();
+		mainPage.clickTotalStashBalance();
+		stashSetupPage.stashSetupPage();
+		stashclosePage.stashclosePage();
+	}
 }

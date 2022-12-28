@@ -14,14 +14,14 @@ public class LoginPage extends BasePage {
     }
 
     /**
-     * Business method for RingPay Application Launch
+     * Business method for Tonix Application Launch
      *
      */
 
     public void performLogin() throws Exception {
         extent.HeaderChildNode("Tonix Login");
 
-        explicitWaitVisibility(LoginSelectors.txtPageTitle,120);
+        explicitWaitVisibility(LoginSelectors.txtPageTitle,10);
         if(verifyElementPresent(LoginSelectors.edtPassword, "Password edit field")) {
             String camPermHeaderTxt = getText(LoginSelectors.edtPassword);
             Assert.assertEquals(camPermHeaderTxt, "Password");
