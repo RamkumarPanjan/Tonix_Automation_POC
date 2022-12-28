@@ -2,11 +2,11 @@ package com.android.selectors;
 
 import org.openqa.selenium.By;
 
-public class Stash_ManageStashselectors {
+public class Stash_ManageStashSelectors {
 	
 	public static By txtManageStash =By.xpath("//*[@class='android.widget.TextView' and @text='Manage Stash']");
 	
-	public static By txtStashdetails=By.xpath("//*[@class='android.widget.TextView' and contains(@text,'Stash details')]");
+	public static By txtStashDetails=By.xpath("//*[@class='android.widget.TextView' and contains(@text,'Stash details')]");
 	
 	public static By txtModify=By.xpath("//*[@class='android.widget.TextView' and contains(@text,' Modify')]");
 	
