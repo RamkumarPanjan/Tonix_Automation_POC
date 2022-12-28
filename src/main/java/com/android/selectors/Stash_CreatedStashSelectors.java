@@ -2,7 +2,7 @@ package com.android.selectors;
 
 import org.openqa.selenium.By;
 
-public class Stash_createdStashSelectors {
+public class Stash_CreatedStashSelectors {
 	
 	
 	public static By imgCreatedStash=By.xpath("//*[@class='android.widget.ScrollView']/child::android.view.ViewGroup/descendant::android.widget.ImageView");

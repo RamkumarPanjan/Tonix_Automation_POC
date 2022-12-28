@@ -1,9 +1,6 @@
 package com.business.tonixPages;
 
-import com.android.selectors.MainSelectors;
-import com.android.selectors.Stash_ManageStashselectors;
 import com.android.selectors.Stash_StashHomeSelectors;
-import com.android.selectors.Stash_StashSetupSelectors;
 
 public class Stash_StashHomePage extends BasePage {
 

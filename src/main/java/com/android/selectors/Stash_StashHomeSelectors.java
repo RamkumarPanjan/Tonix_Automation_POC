@@ -22,7 +22,7 @@ public class Stash_StashHomeSelectors {
 	
     public static By txtAddtoStash=By.xpath("//*[@class='android.widget.TextView' and @text='Add to Stash']");
     
-    public static By txtAddtoStashBox=By.xpath("(//*[@class='android.widget.ScrollView']/child::android.view.ViewGroup/(child::android.view.ViewGroup)[2]/descendant::android.view.ViewGroup)[7]");
+    public static By txtAddToStashBox=By.xpath("(//*[@class='android.widget.ScrollView']/child::android.view.ViewGroup/(child::android.view.ViewGroup)[2]/descendant::android.view.ViewGroup)[7]");
 	
     public static By imgStashNameBox=By.xpath("//*[@class='android.widget.ScrollView']/child::android.view.ViewGroup/(child::android.view.ViewGroup)[2]/descendant::android.widget.ImageView");
     
@@ -33,5 +33,5 @@ public class Stash_StashHomeSelectors {
     
     public static By edittxtAddTostash=By.xpath("(//*[@class='android.widget.EditText'])[2]");
     
-    public static By BtnNext=By.xpath("//*[@class='android.widget.TextView' and @text='Next']");
+    public static By btnNext=By.xpath("//*[@class='android.widget.TextView' and @text='Next']");
 }

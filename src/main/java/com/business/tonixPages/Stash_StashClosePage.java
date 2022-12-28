@@ -1,12 +1,13 @@
 package com.business.tonixPages;
 
+
 import com.android.selectors.Stash_ManageStashselectors;
 import com.android.selectors.Stash_StashHomeSelectors;
 import com.android.selectors.Stash_CreatedStashSelectors;
 	
-public class StashClosePage extends BasePage{
+public class Stash_StashClosePage extends BasePage{
 	
-	public StashClosePage() throws InterruptedException {
+	public Stash_StashClosePage() throws InterruptedException {
 		super();	
 	}
 	

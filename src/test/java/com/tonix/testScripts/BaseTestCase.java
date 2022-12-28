@@ -14,8 +14,9 @@ public class BaseTestCase {
     protected com.business.tonixPages.BasePage basePage;
     protected com.business.tonixPages.MainPage mainPage;
     protected com.business.tonixPages.Stash_StashHomePage stashHomePage;
-    protected com.business.tonixPages.StashSetupPage stashSetupPage;
-    protected com.business.tonixPages.StashClosePage stashclosePage;
+    protected com.business.tonixPages.Stash_SetupYourStashPage stashSetupPage;
+    protected com.business.tonixPages.Stash_StashClosePage stashClosePage;
+    protected com.business.tonixPages.Stash_StartNewStashPage startNewStaShPage;
     
     
     Utilities util=new Utilities();
@@ -28,8 +29,9 @@ public class BaseTestCase {
         loginPage = new com.business.tonixPages.LoginPage();
         mainPage = new com.business.tonixPages.MainPage();
         stashHomePage=new com.business.tonixPages.Stash_StashHomePage();
-        stashSetupPage=new com.business.tonixPages.StashSetupPage();
-        stashclosePage=new com.business.tonixPages.StashClosePage();
+        stashSetupPage=new com.business.tonixPages.Stash_SetupYourStashPage();
+        stashClosePage=new com.business.tonixPages.Stash_StashClosePage();
+        startNewStaShPage=new com.business.tonixPages.Stash_StartNewStashPage();
     }
 
     @AfterTest
