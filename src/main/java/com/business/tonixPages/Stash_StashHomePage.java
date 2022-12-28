@@ -12,63 +12,44 @@ public class Stash_StashHomePage extends BasePage {
 	}
 
 	public void clickStartANewStash() throws Exception {
-
-		extent.HeaderChildNode("Different stashes Flow");
-
-		explicitWaitVisibility(MainSelectors.txtYourTonikAccount, 10);
-		verifyElementPresent(MainSelectors.txtYourTonikAccount,"Your Tonik Account text");
-		Swipe("up", 1);
-
+		extent.HeaderChildNode("Click on Start a new stash");
 		waitTime(2000);
-
-			explicitWaitVisibility(MainSelectors.txtStashes, 10);
-
-		if(	verifyElementPresent(MainSelectors.txtStashes, "stashes text"))
+		if(verifyElementPresent(Stash_StashHomeSelectors.txtStartNewStash, "stashes text"))
 		{
-			click(MainSelectors.txtStashes, " stashes text");
+			click(Stash_StashHomeSelectors.txtStartNewStash, "Start a new stash");
+			extent.extentLoggerPass("Start a new stash", "Clicked on 'Start a new stash' text in main page");
 		}
-		/*	explicitWaitVisibility(StashHomePageSelectors.objIndividualstashTxt, 10);
-		verifyElementPresent(StashHomePageSelectors.objIndividualstashTxt, getTextVal(StashHomePageSelectors.objIndividualstashTxt, "text"));
-		click(StashHomePageSelectors.objAlrightBtn,"Alright button");
-
-		explicitWaitVisibility(StashHomePageSelectors.objIDeserveStashTxt, 10);
-		verifyElementPresent(StashHomePageSelectors.objIDeserveStashTxt, getTextVal(StashHomePageSelectors.objIDeserveStashTxt, "text"));
-		click(StashHomePageSelectors.objAmazingBtn,"Amazing button");
-
-		explicitWaitVisibility(StashHomePageSelectors.objReboundStashtxt, 10);
-		verifyElementPresent(StashHomePageSelectors.objReboundStashtxt, getTextVal(StashHomePageSelectors.objReboundStashtxt, "text"));
-		click(StashHomePageSelectors.objReallBtn,"Really? button");
-
-		explicitWaitVisibility(StashHomePageSelectors.objGoalsStashTxt, 10);
-		verifyElementPresent(StashHomePageSelectors.objGoalsStashTxt, getTextVal(StashHomePageSelectors.objGoalsStashTxt, "text"));
-		click(StashHomePageSelectors.objCoolBtn,"Cool! button");
-
-		explicitWaitVisibility(StashHomePageSelectors.objWerkitstashtxt, 10);
-		verifyElementPresent(StashHomePageSelectors.objWerkitstashtxt, getTextVal(StashHomePageSelectors.objWerkitstashtxt, "text"));
-		click(StashHomePageSelectors.objLetsstartStashingBtn,"Let's start stashing button");*/
-
-
 		else
 		{
-			logger.info("stash balance");
-			waitTime(3000);
-			explicitWaitVisibility(MainSelectors.txtTotalStashBalance,10);
-			if(verifyElementPresent(MainSelectors.txtTotalStashBalance, "Total Stash balance text")) {
-				waitForElementAndClickIfPresent(MainSelectors.txtTotalStashBalance, 20,"Click Total Stash balance text");
-				logger.info("Total Stash balance text");
-				extent.extentLoggerPass("Total Stash balance", "Clicked on Total Stash balance");
-			}
-			else{
-				logger.info("Popup is not displayed");
-				extent.extentLoggerFail("Allow popup", "Allow popup not displayed");
-			}
+			extent.extentLoggerFail("Start a new stash", "Unable to click on 'Start a new stash' link in stash home page");
 		}
+	}
 
-			explicitWaitVisibility(Stash_StashHomeSelectors.txtStartNewStash, 10);
-		verifyElementPresent(Stash_StashHomeSelectors.txtStartNewStash, "start a new stash text");
-		click(Stash_StashHomeSelectors.txtStartNewStash,"start a new stash text");
-		click(Stash_StashHomeSelectors.txtStartNewStash,"start a new stash text");
+	public void clickManage() throws Exception {
+		extent.HeaderChildNode("Click on 'Manage' text");
+		waitTime(2000);
+		if(verifyElementPresent(Stash_StashHomeSelectors.txtManage, "Manage text"))
+		{
+			click(Stash_StashHomeSelectors.txtManage, "Manage stash");
+			extent.extentLoggerPass("Manage stash", "Clicked on 'Manage' text in stash main page");
+		}
+		else
+		{
+			extent.extentLoggerFail("Manage stash", "Unable to click on 'Manage' link in stash home page");
+		}
+	}
 
-	
+	public void clickAddToStash() throws Exception {
+		extent.HeaderChildNode("Click on 'Add to stash' text");
+		waitTime(2000);
+		if(verifyElementPresent(Stash_StashHomeSelectors.txtAddtoStash, "Add to stash' text"))
+		{
+			click(Stash_StashHomeSelectors.txtAddtoStash, "Add to stash");
+			extent.extentLoggerPass("Manage stash", "Clicked on 'Add to stash' text in stash main page");
+		}
+		else
+		{
+			extent.extentLoggerFail("Manage stash", "Unable to click on 'Add to stash' link in stash home page");
+		}
 	}
 }
