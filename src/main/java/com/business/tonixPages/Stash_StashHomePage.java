@@ -5,13 +5,13 @@ import com.android.selectors.Stash_ManageStashselectors;
 import com.android.selectors.Stash_StashHomeSelectors;
 import com.android.selectors.Stash_StashSetupSelectors;
 
-public class StashHomePage extends BasePage {
+public class Stash_StashHomePage extends BasePage {
 
-	public StashHomePage() throws InterruptedException {
+	public Stash_StashHomePage() throws InterruptedException {
 		super();
 	}
 
-	public void stashHomePageTest() throws Exception {
+	public void clickStartANewStash() throws Exception {
 
 		extent.HeaderChildNode("Different stashes Flow");
 

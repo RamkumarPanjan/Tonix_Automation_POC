@@ -13,7 +13,7 @@ public class BaseTestCase {
     protected com.business.tonixPages.LoginPage loginPage;
     protected com.business.tonixPages.BasePage basePage;
     protected com.business.tonixPages.MainPage mainPage;
-    protected com.business.tonixPages.StashHomePage stashHomePage;
+    protected com.business.tonixPages.Stash_StashHomePage stashHomePage;
     protected com.business.tonixPages.StashSetupPage stashSetupPage;
     protected com.business.tonixPages.StashClosePage stashclosePage;
     
@@ -27,7 +27,7 @@ public class BaseTestCase {
         welcomePage = new com.business.tonixPages.WelcomePage();
         loginPage = new com.business.tonixPages.LoginPage();
         mainPage = new com.business.tonixPages.MainPage();
-        stashHomePage=new com.business.tonixPages.StashHomePage();
+        stashHomePage=new com.business.tonixPages.Stash_StashHomePage();
         stashSetupPage=new com.business.tonixPages.StashSetupPage();
         stashclosePage=new com.business.tonixPages.StashClosePage();
     }

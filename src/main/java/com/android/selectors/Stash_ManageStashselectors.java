@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 
 public class Stash_ManageStashselectors {
 	
-	
 	public static By txtManageStash =By.xpath("//*[@class='android.widget.TextView' and @text='Manage Stash']");
 	
 	public static By txtStashdetails=By.xpath("//*[@class='android.widget.TextView' and contains(@text,'Stash details')]");
@@ -13,11 +12,9 @@ public class Stash_ManageStashselectors {
 	
 	public static By txtWithdrawToyourTONIKAccount=By.xpath("//*[@class='android.widget.TextView' and contains(@text,' Withdraw to your TONIK Account')]");
 	
-	
 	public static By BtnClose=By.xpath("//*[@class='android.widget.TextView' and @text=' Close']");
 	
 	public static By txtYesCloseStash= By.xpath("//*[@class='android.widget.TextView' and @text='Yes, close the stash']");
 
-	
 	public static By DoneBtn1=By.xpath("//*[contains(@text,'Done')]");
 }
