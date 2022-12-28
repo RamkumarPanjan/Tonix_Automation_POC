@@ -39,14 +39,14 @@ public class Stash_StashHomePage extends BasePage {
 	public void clickAddToStash() throws Exception {
 		extent.HeaderChildNode("Click on 'Add to stash' text");
 		waitTime(2000);
-		if(verifyElementPresent(Stash_StashHomeSelectors.txtAddtoStash, "Add to stash' text"))
-		{
-			click(Stash_StashHomeSelectors.txtAddtoStash, "Add to stash");
-			extent.extentLoggerPass("Manage stash", "Clicked on 'Add to stash' text in stash main page");
-		}
-		else
-		{
-			extent.extentLoggerFail("Manage stash", "Unable to click on 'Add to stash' link in stash home page");
-		}
+        if(ifElementPresent(Stash_StashHomeSelectors.txtAddToStash, "'Add to Stash' text")) {
+            waitForElementAndClickIfPresent(Stash_StashHomeSelectors.txtAddToStash, 20,"Click 'Add to Stash' text in add to stash page");
+            logger.info("Adding to stash");
+            extent.extentLoggerPass("Add to Stash", "Clicked on 'Add to Stash' text in add to stash page");
+        }
+        else {
+            logger.info("Popup is not displayed");
+            extent.extentLoggerFail("Allow popup", "Allow popup not displayed");
+        }
 	}
 }
