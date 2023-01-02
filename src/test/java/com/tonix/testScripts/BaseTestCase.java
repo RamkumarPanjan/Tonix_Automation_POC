@@ -24,8 +24,12 @@ public class BaseTestCase {
     protected com.business.tonixPages.Stash_ManageStashPage manageStashPage;
     protected com.business.tonixPages.Stash_ModifyStashPage modifyStashPage;
     protected com.business.tonixPages.Stash_UpdatedYourStashPage updatedStashPage;
-    
+    protected com.business.tonixPages.Stash_WithdrawFromYourStashPage withdrawFromYourStashPage;
+    protected com.business.tonixPages.Stash_ReviewWithdrawPage reviewWithdrawPage;
+    protected com.business.tonixPages.Stash_WithdrawConfirmationPage withdrawConfirmationPage;
+
     public static PropertyFileReader prop = new PropertyFileReader(".\\properties\\testdata.properties");
+
     Utilities util=new Utilities();
     @BeforeTest
     public void Before() throws InterruptedException, IOException {
@@ -45,6 +49,10 @@ public class BaseTestCase {
         manageStashPage=new com.business.tonixPages.Stash_ManageStashPage();
         modifyStashPage=new com.business.tonixPages.Stash_ModifyStashPage();
         updatedStashPage=new com.business.tonixPages.Stash_UpdatedYourStashPage();
+        manageStashPage = new com.business.tonixPages.Stash_ManageStashPage();
+        withdrawFromYourStashPage = new com.business.tonixPages.Stash_WithdrawFromYourStashPage();
+        reviewWithdrawPage = new com.business.tonixPages.Stash_ReviewWithdrawPage();
+        withdrawConfirmationPage = new com.business.tonixPages.Stash_WithdrawConfirmationPage();
         
     }
 
