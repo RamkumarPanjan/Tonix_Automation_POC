@@ -13,7 +13,7 @@ public class Stash_AddToStashPage extends BasePage {
 	     *
 	     */
 
-	    public void addToStash() throws Exception {
+	    public void addToStash(String stashAmount) throws Exception {
 	        extent.HeaderChildNode("Add to stash");
 	        
 	        Thread.sleep(5000);
@@ -27,7 +27,7 @@ public class Stash_AddToStashPage extends BasePage {
 	            //String camPermHeaderTxt = getText(Stash_AddToStashSelectors.edtAddToStash);
 	           Thread.sleep(5000);
 	            click(Stash_AddToStashSelectors.edtAmount, "click on edit amount");
-	            type(Stash_AddToStashSelectors.edtAmount  , prop.getproperty("addtostash"), "Enter amount");
+	            type(Stash_AddToStashSelectors.edtAmount  ,stashAmount, "Enter amount");
 	            hideKeyboard();
 	            waitForElementAndClickIfPresent(Stash_AddToStashSelectors.btnNextt, 20,"click next button in add to stash");
 	            logger.info("Adding to stash");
