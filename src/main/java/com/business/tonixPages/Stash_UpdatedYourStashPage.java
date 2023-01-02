@@ -1,6 +1,5 @@
 package com.business.tonixPages;
 
-import com.android.selectors.Stash_StartNewStashSelectors;
 import com.android.selectors.Stash_UpdateYourStashSelectors;
 
 public class Stash_UpdatedYourStashPage extends BasePage {
