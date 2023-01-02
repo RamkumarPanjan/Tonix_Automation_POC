@@ -15,6 +15,10 @@ public class Stash_ManageStashSelectors {
 	public static By btnClose=By.xpath("//*[@class='android.widget.TextView' and @text=' Close']");
 	
 	public static By txtYesCloseStash= By.xpath("//*[@class='android.widget.TextView' and @text='Yes, close the stash']");
+	
+	public static By txtAreYouSureConfirmation=By.xpath("//*[@class='android.widget.TextView' and contains(@text='Are you sure you want to close this Stash? All the contributions so far will be moved to your Tonik account.')]");
 
+	public static By btnStay=By.xpath("//*[@class='android.widget.TextView' and @text='Stay']");
+	
 	public static By btnDone=By.xpath("//*[contains(@text,'Done')]");
 }

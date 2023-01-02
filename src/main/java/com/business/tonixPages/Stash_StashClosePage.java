@@ -1,44 +1,32 @@
 package com.business.tonixPages;
 
+import com.android.selectors.Stash_StashCloseSelectors;
 
-import com.android.selectors.Stash_ManageStashselectors;
-import com.android.selectors.Stash_StashHomeSelectors;
-import com.android.selectors.Stash_CreatedStashSelectors;
-	
 public class Stash_StashClosePage extends BasePage{
 	
 	public Stash_StashClosePage() throws InterruptedException {
 		super();	
 	}
 	
-	public void stashclosePage() throws Exception {
-		extent.HeaderChildNode(" Stash close Flow");
+	public void brokeTheStash() throws Exception {
+		extent.HeaderChildNode("Confirmation Broke the Stash Page");
 		
-	//	explicitWaitVisibility(StashSetupSelectors.TxtZerooOfTwoAvailablestatshes, 10);
-	//	if(verifyElementPresent(StashSetupSelectors.TxtZerooOfTwoAvailablestatshes, "zero of two stashes"))
-		//{
-		
-		//verifyElementPresent(Stash_ManageStashselectors.txtManageStash, "Manage stash text");
-		
-		    explicitWaitVisibility(Stash_StashHomeSelectors.txtManage, 10);
-			click(Stash_StashHomeSelectors.txtManage,"manage text");
-			click(Stash_StashHomeSelectors.txtManage,"manage text");
+		waitTime(2000);
+		explicitWaitVisibility(Stash_StashCloseSelectors.txtBrokeTheStash, 10);
+		if(verifyElementPresent(Stash_StashCloseSelectors.txtBrokeTheStash, getText(Stash_StashCloseSelectors.txtBrokeTheStash)))
+		{
+			explicitWaitVisibility(Stash_StashCloseSelectors.txtJustKiddingYouHaveClosedIt, 10);
+			verifyElementPresent(Stash_StashCloseSelectors.txtJustKiddingYouHaveClosedIt, getText(Stash_StashCloseSelectors.txtJustKiddingYouHaveClosedIt));
 			
-			explicitWaitVisibility(Stash_CreatedStashSelectors.txtManageBox, 10);
-			click(Stash_CreatedStashSelectors.txtManage1,"manage text");
-			click(Stash_CreatedStashSelectors.txtManage1,"manage text");
-			
-			explicitWaitVisibility(Stash_ManageStashselectors.btnClose, 10);
-			click(Stash_ManageStashselectors.btnClose,"close button");
-			waitTime(2000);
-			explicitWaitVisibility(Stash_ManageStashselectors.txtYesCloseStash, 10);
-			click(Stash_ManageStashselectors.txtYesCloseStash, "Yes close the stash");
-			
-			waitTime(3000);
-			click(Stash_ManageStashselectors.btnDone, "Done button");
-			
-			logger.info("stash is closed successfully..");
-		//}
-	}
+			click(Stash_StashCloseSelectors.btnDone, "Done button");
+			extent.extentLoggerPass("Broke the Stash succesfully", "Broke the Stash is displayed and Clicked on Done button in Close Stash page");
+		}
+		else
+		{
+			extent.extentLoggerFail("Broke the Stash", "You broke the Stash Text in Close Stash page");
+		}
 
+		
+		
+	}
 }

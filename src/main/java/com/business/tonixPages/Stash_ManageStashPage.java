@@ -71,13 +71,29 @@ public class Stash_ManageStashPage extends BasePage {
 		waitTime(2000);
 		if(verifyElementPresent(Stash_ManageStashSelectors.btnClose, "'Close' text"))
 		{
-			click(Stash_ManageStashSelectors.btnClose, "Modify");
+			click(Stash_ManageStashSelectors.btnClose, "Close");
 			extent.extentLoggerPass("'Close' text click", "Clicked on 'Close' text in Manage Stash page");
 		}
 		else
 		{
 			extent.extentLoggerFail("'Close' text click", "Unable to click on 'Close' link in Manage Stash page");
 		}
+	}
+	
+	public void handleCloseStashConfirmation() throws Exception {
+		extent.HeaderChildNode("Confirmation pop-up for closing the Stash");
+		waitTime(2000);
+		explicitWaitVisibility(Stash_ManageStashSelectors.txtYesCloseStash, 10);
+		if(verifyElementPresent(Stash_ManageStashSelectors.txtYesCloseStash, "Yes close the Stash"))
+		{
+			click(Stash_ManageStashSelectors.txtYesCloseStash, "Yes close the Stash");
+			extent.extentLoggerPass("Yes Close the Stash", "Clicked on Yes close the Stash text in Manage Stash page");
+		}
+		else
+		{
+			extent.extentLoggerFail("Yes close the Stash", "Unable to click on Yes close the Stash text in Manage Stash page");
+		}
 
+		
 	}
 }
