@@ -20,7 +20,7 @@ public class Stash_StashHomeSelectors {
 	
 	public static By txtManageBox=By.xpath("(//*[@class='android.widget.ScrollView']/child::android.view.ViewGroup/(child::android.view.ViewGroup)[2]/descendant::android.view.ViewGroup)[9]");
 	
-    public static By txtAddtoStash=By.xpath("//*[@class='android.widget.TextView' and @text='Add to Stash']");
+    //public static By txtAddtoStash=By.xpath("//*[@class='android.widget.TextView' and @text='Add to Stash']");
     
     public static By txtAddToStashBox=By.xpath("(//*[@class='android.widget.ScrollView']/child::android.view.ViewGroup/(child::android.view.ViewGroup)[2]/descendant::android.view.ViewGroup)[7]");
 	
@@ -34,8 +34,12 @@ public class Stash_StashHomeSelectors {
     
     public static By txtAchieved=By.xpath("//*[contains(@text,'Achieved')]");
     
+    public static By txtgoalachieved=By.xpath("//*[@text='Congrats! Goal achieved!']");
+    
     //Add to stash page
-    public static By txtAddToStash=By.xpath("//*[@class='android.widget.TextView' and @text='Add to Stash']");
+    //public static By txtAddToStash=By.xpath("//*[@class='android.widget.TextView' and @text='Add to Stash']");
+    
+    public static By txtAddToStash=By.xpath("//android.widget.TextView[@text='Add to Stash']");
     
     public static By edittxtAddTostash=By.xpath("(//*[@class='android.widget.EditText'])[2]");
     

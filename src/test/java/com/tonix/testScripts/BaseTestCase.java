@@ -27,6 +27,9 @@ public class BaseTestCase {
     protected com.business.tonixPages.Stash_WithdrawFromYourStashPage withdrawFromYourStashPage;
     protected com.business.tonixPages.Stash_ReviewWithdrawPage reviewWithdrawPage;
     protected com.business.tonixPages.Stash_WithdrawConfirmationPage withdrawConfirmationPage;
+    protected com.business.tonixPages.Stash_AddToStashPage stashAddToStashPage;
+    protected com.business.tonixPages.Stash_ConfirmTransferToStashPage stashConfirmTransferToStashPage;
+    protected com.business.tonixPages.Stash_MoneyStashPage stashMoneyStashPage;
 
     public static PropertyFileReader prop = new PropertyFileReader(".\\properties\\testdata.properties");
 
@@ -53,7 +56,9 @@ public class BaseTestCase {
         withdrawFromYourStashPage = new com.business.tonixPages.Stash_WithdrawFromYourStashPage();
         reviewWithdrawPage = new com.business.tonixPages.Stash_ReviewWithdrawPage();
         withdrawConfirmationPage = new com.business.tonixPages.Stash_WithdrawConfirmationPage();
-        
+        stashAddToStashPage=new com.business.tonixPages.Stash_AddToStashPage();
+        stashConfirmTransferToStashPage=new com.business.tonixPages.Stash_ConfirmTransferToStashPage();
+        stashMoneyStashPage=new com.business.tonixPages.Stash_MoneyStashPage();
     }
 
   /*  @AfterTest
