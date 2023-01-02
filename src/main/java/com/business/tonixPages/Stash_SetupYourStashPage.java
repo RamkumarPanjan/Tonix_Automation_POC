@@ -9,7 +9,7 @@ public class Stash_SetupYourStashPage  extends BasePage {
 		super();
 	}
 	
-	public void enterDetailsIntoSetupYourStash() throws Exception {
+	public void enterDetailsIntoSetupYourStash(String stashName, String stashAmount) throws Exception {
 		
 		extent.HeaderChildNode("Enter Stash For and Target Amount");
 		logger.info("Setup Your Stash Details");
@@ -23,7 +23,7 @@ public class Stash_SetupYourStashPage  extends BasePage {
 			explicitWaitVisibility(Stash_SetupYourStashSelectors.txtStashFor,10);
 			verifyElementPresent(Stash_SetupYourStashSelectors.txtStashFor, "Stash For");
 			Aclick(Stash_SetupYourStashSelectors.edittxtStashFor, "text field");
-			type(Stash_SetupYourStashSelectors.edittxtStashFor, prop.getproperty("stashfor"), " stash For text Field");
+			type(Stash_SetupYourStashSelectors.edittxtStashFor, stashName, " stash For text Field");
 			logger.info("Entered the Stash For Name");
 			waitTime(3000);
 			hideKeyboard();
@@ -31,7 +31,7 @@ public class Stash_SetupYourStashPage  extends BasePage {
 			explicitWaitVisibility(Stash_SetupYourStashSelectors.txtTargetamount, 10);
 			verifyElementPresent(Stash_SetupYourStashSelectors.txtTargetamount, "Target Amount");
 			Aclick(Stash_SetupYourStashSelectors.edittxtTargetamount, "text field");
-			type(Stash_SetupYourStashSelectors.edittxtTargetamount, prop.getproperty("targetamount"), "target amount Field");
+			type(Stash_SetupYourStashSelectors.edittxtTargetamount, stashAmount, "target amount Field");
             logger.info("Entered the Target Amount");
 			explicitWaitVisibility(Stash_SetupYourStashSelectors.btnNext, 10);
 			verifyElementPresentAndClick(Stash_SetupYourStashSelectors.btnNext, "Next button");
@@ -44,7 +44,7 @@ public class Stash_SetupYourStashPage  extends BasePage {
 		}
 }
 	
-	public void modifyStashForField() throws Exception {
+	public void modifyStashForField(String stashName) throws Exception {
 		extent.HeaderChildNode("Enter Stash For Details");
 		logger.info("Setup Your Stash Details");
 		waitTime(2000);
@@ -57,7 +57,7 @@ public class Stash_SetupYourStashPage  extends BasePage {
 			explicitWaitVisibility(Stash_SetupYourStashSelectors.txtStashFor,10);
 			verifyElementPresent(Stash_SetupYourStashSelectors.txtStashFor, "Stash For");
 			Aclick(Stash_SetupYourStashSelectors.edittxtStashFor, "text field");
-			type(Stash_SetupYourStashSelectors.edittxtStashFor, prop.getproperty("stashfor"), " into stash For text Field");
+			type(Stash_SetupYourStashSelectors.edittxtStashFor, stashName, " into stash For text Field");
 			logger.info("Entered the Stash For Name");
 			waitTime(3000);
 			hideKeyboard();
@@ -73,7 +73,7 @@ public class Stash_SetupYourStashPage  extends BasePage {
 		
 	}
 	
-	public void modifyTargetamountField() throws Exception {
+	public void modifyTargetamountField(String stashAmount) throws Exception {
 		
 		extent.HeaderChildNode("Enter Stash For and Target Amount");
 		logger.info("Setup Your Stash Details");
@@ -87,7 +87,7 @@ public class Stash_SetupYourStashPage  extends BasePage {
 			explicitWaitVisibility(Stash_SetupYourStashSelectors.txtTargetamount, 10);
 			verifyElementPresent(Stash_SetupYourStashSelectors.txtTargetamount, "Target Amount");
 			Aclick(Stash_SetupYourStashSelectors.edittxtTargetamount, "text field");
-			type(Stash_SetupYourStashSelectors.edittxtTargetamount, prop.getproperty("targetamount"), "target amount Field");
+			type(Stash_SetupYourStashSelectors.edittxtTargetamount, stashAmount, "target amount Field");
             logger.info("Entered the Target Amount");
 			explicitWaitVisibility(Stash_SetupYourStashSelectors.btnNext, 10);
 			verifyElementPresentAndClick(Stash_SetupYourStashSelectors.btnNext, "Next button");
