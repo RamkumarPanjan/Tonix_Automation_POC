@@ -25,8 +25,8 @@ public class Json {
 			RequestSpecification request = RestAssured.given();
 			request.header("Content-Type", "application/json");
 			JSONObject requestParams = new JSONObject();
-			requestParams.put("client_id", "7BDD4513945D4FFFB1699C8386F7B33E"); // Cast
-			requestParams.put("client_secret", "c38f50b4ec4c8311d63404008fea98de290df6a62c25375c246c2ae85ac88111");
+			requestParams.put("client_id", "08977CA27B274D88A588FB5BF205948F"); // Cast
+			requestParams.put("client_secret", "b82e76fb42d972a5af0ceea2d2890fe62514756db7065eab43a29d7d860625e4");
 
 			request.body(requestParams.toJSONString());
 			

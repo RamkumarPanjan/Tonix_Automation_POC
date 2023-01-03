@@ -8,6 +8,10 @@ public class Stash_ReviewWithdrawPage extends BasePage {
 		super();
 	}
 
+	/*
+		Verify if page is loaded successfully
+		Parameters: none
+	 */
 	public void verifyPageLoaded() throws Exception {
 		extent.HeaderChildNode("Page loaded verification: Withdraw from your Stash ");
 
@@ -22,6 +26,13 @@ public class Stash_ReviewWithdrawPage extends BasePage {
 		}
 	}
 
+	/*
+		Verify withdrawal amount, stash type, to account information in Review Withdraw page
+		Parameters:
+			withdrawalAmount - Amount to be withdrawn
+			stashType - Stash type: Emergency, Travelling
+			toAccount - To Tonik Account
+	 */
 	public void reviewWithdrawalInfo(String withdrawalAmount, String stashType, String toAccount) throws Exception {
 		extent.HeaderChildNode("Review withdrawal amount");
 		waitTime(2000);
