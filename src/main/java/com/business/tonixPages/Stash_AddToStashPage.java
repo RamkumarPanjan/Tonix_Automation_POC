@@ -21,7 +21,7 @@ public class Stash_AddToStashPage extends BasePage {
 	        Thread.sleep(5000);
 	        
 	        if(ifElementPresent(Stash_AddToStashSelectors.txtBalance, "'Balance' text")) {
-            	verifyElementPresent(Stash_AddToStashSelectors.txtBalance,getText(Stash_AddToStashSelectors.txtBalance));
+            	verifyElementPresent(Stash_AddToStashSelectors.txtBalance,"Balance text");
 	        }
 	        if(verifyElementPresent(Stash_AddToStashSelectors.edtAmount, "Edit amount")) {
 	            //String camPermHeaderTxt = getText(Stash_AddToStashSelectors.edtAddToStash);
