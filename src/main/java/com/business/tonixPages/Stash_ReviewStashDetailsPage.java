@@ -13,7 +13,7 @@ public class Stash_ReviewStashDetailsPage extends BasePage{
 		
 		extent.HeaderChildNode("verify Review Stash details and Click on Create Stash");
 		waitTime(2000);
-		if(verifyElementPresent(Stash_ReviewStashDetailsSelectors.txtReviewStashDetails, getText(Stash_ReviewStashDetailsSelectors.txtReviewStashDetails)))
+		if(verifyElementPresent(Stash_ReviewStashDetailsSelectors.txtReviewStashDetails, "Review Stash Details Text"))
 		{
 			waitTime(2000);
 			Swipe("up", 1);
