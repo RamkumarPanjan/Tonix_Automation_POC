@@ -26,7 +26,7 @@ public class Stash_ReviewStashDetailsPage extends BasePage{
 
 		//	click(Stash_ReviewStashDetailsSelectors.btnTickedRadioButton,  " Radio button");
 			click(Stash_ReviewStashDetailsSelectors.btnTickedRadioButton,  " Radio button");
-			String focused_after = getAttributValue("focused",Stash_ReviewStashDetailsSelectors.btnTickedRadioButton);
+			String focused_after = getAttributValue("focusable",Stash_ReviewStashDetailsSelectors.btnTickedRadioButton);
 			System.out.println(focused_after);
 			softAssertion.assertEquals("false", focused_after);
 

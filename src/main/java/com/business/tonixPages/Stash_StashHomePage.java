@@ -1,5 +1,11 @@
 package com.business.tonixPages;
 
+import java.util.List;
+
+import org.openqa.selenium.WebElement;
+import org.testng.Reporter;
+
+import com.android.selectors.Stash_CreatedStashSelectors;
 import com.android.selectors.Stash_StashHomeSelectors;
 
 public class Stash_StashHomePage extends BasePage {
@@ -56,7 +62,9 @@ public class Stash_StashHomePage extends BasePage {
     		
     	waitTime(2000);
         if(ifElementPresent(Stash_StashHomeSelectors.txtAchieved, "'Achieved' text")) {
-           verifyElementPresent(Stash_StashHomeSelectors.txtAchieved,"Verify 'Achieved' text in stash page");
+        	verifyElementPresent(Stash_StashHomeSelectors.txtStashNameActual, getText(Stash_StashHomeSelectors.txtStashNameActual));
+        	waitTime(2000);
+           verifyElementPresent(Stash_StashHomeSelectors.txtAchieved,getText(Stash_StashHomeSelectors.txtAchieved));
            logger.info("Achieved");
            extent.extentLoggerPass("Achieved", "Verified 'Achieved' text in stash page");
             }

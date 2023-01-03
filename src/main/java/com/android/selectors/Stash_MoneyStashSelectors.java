@@ -6,6 +6,12 @@ public class Stash_MoneyStashSelectors {
 
 	
 	public static By txtDoItLater =By.xpath("//*[contains(@text,'pinky swear')]");
+	
 	public static By txtMoneyStashed = By.xpath("//android.widget.TextView[@text='Money stashed!']");
+	
+	public static By txtYouAddedTo=By.xpath("//*[@class='android.widget.TextView' and contains(@text,'You added')]");
+	
+	public static By txtViewDetailsOFHowWeMoved=By.xpath("//*[@class='android.widget.TextView' and contains(@text,'View details of how we moved it.')]");
+
 	public static By btnDone = By.xpath("//android.widget.TextView[@text='Done']");
 }
