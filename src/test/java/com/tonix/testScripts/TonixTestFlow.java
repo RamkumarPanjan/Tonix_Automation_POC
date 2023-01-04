@@ -15,7 +15,7 @@ public class TonixTestFlow extends BaseTestCase {
 		stashHomePage.clickStartANewStash();
 		startNewStaShPage.clickOpenANewStash();
 		startNewStaShPage.selectSoloStashType();
-		stashSetupPage.enterDetailsIntoSetupYourStash(prop.getproperty("educationStash"),"3000");
+		stashSetupPage.enterDetailsIntoSetupYourStash(prop.getproperty("educationStash"),"1000");
 		setInitialSavingPage.clickOnSkipForNow();
 		reviewStashDetailsPage.verifyDetailsAndCreateStash();
 		soloStashCreatedPage.soloStashCreated();
@@ -26,7 +26,7 @@ public class TonixTestFlow extends BaseTestCase {
 	public void addToStash() throws Exception {
 		// Nithya
 		stashHomePage.clickAddToStash();
-		stashAddToStashPage.addToStash("1500");
+		stashAddToStashPage.addToStash("500");
 		stashConfirmTransferToStashPage.confirmTransferToStash("500.00", prop.getproperty("mainAccount"),prop.getproperty("educationStash"),prop.getproperty("ownerStash"));
 		stashMoneyStashPage.moneyStashed();
 		stashHomePage.verifyStashAchieved();
@@ -37,7 +37,7 @@ public class TonixTestFlow extends BaseTestCase {
 	public void addToStashAgain() throws Exception {
 		// Nithya
 		stashHomePage.clickAddToStash();
-		stashAddToStashPage.addToStash("1500");
+		stashAddToStashPage.addToStash("500");
 		stashConfirmTransferToStashPage.confirmTransferToStash("500.00", prop.getproperty("mainAccount"),prop.getproperty("educationStash"),prop.getproperty("ownerStash"));
 		stashMoneyStashPage.moneyStashed();
 		ExtentReporter.jiraID = "TON-3";
@@ -55,9 +55,9 @@ public class TonixTestFlow extends BaseTestCase {
 		stashHomePage.clickManage();
 		manageStashPage.clickWithdrawToYourTonikAccount();
 		withdrawFromYourStashPage.verifyPageLoaded();
-		withdrawFromYourStashPage.withDrawAmount("3000");
-		reviewWithdrawPage.reviewWithdrawalInfo("₱3,000", prop.getproperty("educationStash"), "My TONIK Account");
-		withdrawConfirmationPage.verifyConfirmationMessage("₱3,000",prop.getproperty("educationStash"));
+		withdrawFromYourStashPage.withDrawAmount("1000");
+		reviewWithdrawPage.reviewWithdrawalInfo("1,000.00", prop.getproperty("educationStash"), "My TONIK account");
+		withdrawConfirmationPage.verifyConfirmationMessage("₱1,000",prop.getproperty("educationStash"));
 		ExtentReporter.jiraID = "TON-7";
 	}
 

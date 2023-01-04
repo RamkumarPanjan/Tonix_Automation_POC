@@ -41,12 +41,13 @@ public class Stash_ReviewWithdrawPage extends BasePage {
 
 		String isButtonClickable = getAttributValue("clickable", Stash_ReviewWithdrawalSelectors.btnConfirm);
 
-		String actualWithdrawalAmount = getText(Stash_ReviewWithdrawalSelectors.txtAmountValue);
+		String actualWithdrawalAmount = getText(Stash_ReviewWithdrawalSelectors.txtAmountValue).substring(1);
 		String actualStashType = getText(Stash_ReviewWithdrawalSelectors.txtFromValue);
 		String actualToAccount = getText(Stash_ReviewWithdrawalSelectors.txtToValue);
 		softAssertion.assertEquals(withdrawalAmount, actualWithdrawalAmount);
 		softAssertion.assertEquals(stashType, actualStashType);
 		softAssertion.assertEquals(toAccount, actualToAccount);
+		softAssertion.assertAll();
 
 		click(Stash_ReviewWithdrawalSelectors.btnConfirm, "Confirm");
 		waitTime(2000);
