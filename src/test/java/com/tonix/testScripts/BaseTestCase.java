@@ -61,9 +61,8 @@ public class BaseTestCase {
         stashMoneyStashPage=new com.business.tonixPages.Stash_MoneyStashPage();
     }
 
-  /*  @AfterTest
+    @AfterTest
     public void tonixAppQuit() throws Exception{
         basePage.TearDown();
-    }*/
-
+    }
 }
