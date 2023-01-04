@@ -19,15 +19,20 @@ public class Stash_ConfirmTransferToStashPage extends BasePage {
 	        extent.HeaderChildNode("Confirm transfer to stash");
 	        
 	        explicitWaitVisibility(Stash_ConfirmTransferToStashSelectors.txtConfirmTransferToStash,120); 
-	        String actualeditAmount = getText(Stash_ConfirmTransferToStashSelectors.txtAmount);
+	        String actualeditAmount = getText(Stash_ConfirmTransferToStashSelectors.txtAmount).substring(1);
 			String actualfromAccount = getText(Stash_ConfirmTransferToStashSelectors.txtFrom);
 			String actualtoStashType = getText(Stash_ConfirmTransferToStashSelectors.txtTo);
 			String actualstashOwner = getText(Stash_ConfirmTransferToStashSelectors.txtStashOwner);
 			softAssertion.assertEquals(editAmount, actualeditAmount);
+			System.out.println(actualeditAmount);
 			softAssertion.assertEquals(fromAccount, actualfromAccount);
+			System.out.println(actualfromAccount);
 			softAssertion.assertEquals(stashType, actualtoStashType);
+			System.out.println(actualtoStashType);
 			softAssertion.assertEquals(stashOwner, actualstashOwner);
-
+			System.out.println(actualstashOwner);
+			softAssertion.assertAll();
+			
 	        if(ifElementPresent(Stash_ConfirmTransferToStashSelectors.btnConfirm, "Confirm transfer to stash")) {
 	            waitForElementAndClickIfPresent(Stash_ConfirmTransferToStashSelectors.btnConfirm, 20,"Click confirm transfer to stash");
 	            logger.info("Confirming transfer to stash");

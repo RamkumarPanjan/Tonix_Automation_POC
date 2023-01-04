@@ -57,9 +57,7 @@ public class Stash_StashHomePage extends BasePage {
     		
     	waitTime(2000);
         if(ifElementPresent(Stash_StashHomeSelectors.txtAchieved, "'Achieved' text")) {
-        	verifyElementPresent(Stash_StashHomeSelectors.txtStashNameActual, getText(Stash_StashHomeSelectors.txtStashNameActual));
-        	waitTime(2000);
-           verifyElementPresent(Stash_StashHomeSelectors.txtAchieved,getText(Stash_StashHomeSelectors.txtAchieved));
+           verifyElementPresent(Stash_StashHomeSelectors.txtAchieved, "Verify 'Achieved' text in stash page");
            logger.info("Achieved");
            extent.extentLoggerPass("Achieved", "Verified 'Achieved' text in stash page");
             }
