@@ -8,7 +8,6 @@ public class Stash_ModifyStashPage extends BasePage {
 		super();
 	}
 
-
 	public void modifyStashDetails(String stashName, String stashAmount) throws Exception {
 		extent.HeaderChildNode("Modify Existing Stash Details");
 		logger.info("Modify Stash Page is displayed");
