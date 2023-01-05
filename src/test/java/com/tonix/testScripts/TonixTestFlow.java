@@ -12,42 +12,42 @@ public class TonixTestFlow extends BaseTestCase {
 		loginPage.performLogin();
 		mainPage.clickTotalStashBalance();
 		// Harish
-//		stashHomePage.clickStartANewStash();
-//		startNewStaShPage.clickOpenANewStash();
-//		startNewStaShPage.selectSoloStashType();
-//		stashSetupPage.enterDetailsIntoSetupYourStash(prop.getproperty("educationStash"),"1000");
-//		setInitialSavingPage.clickOnSkipForNow();
-//		reviewStashDetailsPage.verifyDetailsAndCreateStash();
-//		soloStashCreatedPage.soloStashCreated();
+		stashHomePage.clickStartANewStash();
+		startNewStaShPage.clickOpenANewStash();
+		startNewStaShPage.selectSoloStashType();
+		stashSetupPage.enterDetailsIntoSetupYourStash(prop.getproperty("educationStash"),"1000");
+		setInitialSavingPage.clickOnSkipForNow();
+		reviewStashDetailsPage.verifyDetailsAndCreateStash();
+		soloStashCreatedPage.soloStashCreated();
 		ExtentReporter.jiraID = "TON-2";
 	}
 
-//	@Test(priority = 1)
-//	public void addToStash() throws Exception {
-//		// Nithya
-//		stashHomePage.clickAddToStash();
-//		stashAddToStashPage.addToStash("500");
-//		stashConfirmTransferToStashPage.confirmTransferToStash("500.00", prop.getproperty("mainAccount"),prop.getproperty("educationStash"),prop.getproperty("ownerStash"));
-//		stashMoneyStashPage.moneyStashed();
-//		stashHomePage.verifyStashAchieved();
-//		ExtentReporter.jiraID = "TON-3";
-//	}
+	@Test(priority = 1)
+	public void addToStash() throws Exception {
+		// Nithya
+		stashHomePage.clickAddToStash();
+		stashAddToStashPage.addToStash("500");
+		stashConfirmTransferToStashPage.confirmTransferToStash("500.00", prop.getproperty("mainAccount"),prop.getproperty("educationStash"),prop.getproperty("ownerStash"));
+		stashMoneyStashPage.moneyStashed();
+		stashHomePage.verifyStashAchieved();
+		ExtentReporter.jiraID = "TON-3";
+	}
 
-//	@Test(priority = 2)
-//	public void addToStashAgain() throws Exception {
-//		// Nithya
-//		stashHomePage.clickAddToStash();
-//		stashAddToStashPage.addToStash("500");
-//		stashConfirmTransferToStashPage.confirmTransferToStash("500.00", prop.getproperty("mainAccount"),prop.getproperty("educationStash"),prop.getproperty("ownerStash"));
-//		stashMoneyStashPage.moneyStashed();
-//		ExtentReporter.jiraID = "TON-3";
-//	}
-//
-//	@Test(priority = 3)
-//	public void verifyGoalAchieved() throws Exception {
-//		stashHomePage.verifyGoalAchieved();
-//		ExtentReporter.jiraID = "TON-9";
-//	}
+	@Test(priority = 2)
+	public void addToStashAgain() throws Exception {
+		// Nithya
+		stashHomePage.clickAddToStash();
+		stashAddToStashPage.addToStash("500");
+		stashConfirmTransferToStashPage.confirmTransferToStash("500.00", prop.getproperty("mainAccount"),prop.getproperty("educationStash"),prop.getproperty("ownerStash"));
+		stashMoneyStashPage.moneyStashed();
+		ExtentReporter.jiraID = "TON-3";
+	}
+
+	@Test(priority = 3)
+	public void verifyGoalAchieved() throws Exception {
+		stashHomePage.verifyGoalAchieved();
+		ExtentReporter.jiraID = "TON-9";
+	}
 
 	@Test(priority = 4)
 	public void withDrawStash() throws Exception {
