@@ -56,7 +56,7 @@ public class TonixTestFlow extends BaseTestCase {
 		manageStashPage.clickWithdrawToYourTonikAccount();
 		withdrawFromYourStashPage.verifyPageLoaded();
 		withdrawFromYourStashPage.withDrawAmount("1000");
-		reviewWithdrawPage.reviewWithdrawalInfo("1,000.00", prop.getproperty("educationStash"), "My TONIK account");
+		reviewWithdrawPage.reviewWithdrawalInfo("1,000.00", prop.getproperty("educationStash"), prop.getproperty("mainAccount"));
 		withdrawConfirmationPage.verifyConfirmationMessage("₱1,000",prop.getproperty("educationStash"));
 		ExtentReporter.jiraID = "TON-7";
 	}

@@ -24,11 +24,12 @@ public class Stash_WithdrawConfirmationPage extends BasePage {
 
 	public void verifyConfirmationMessage(String withdrawalAmount, String stashType) throws Exception {
 		extent.HeaderChildNode("Withdrawal Confirmation: Confirmation message verification");
+		this.verifyPageLoaded();
 
 		String actualMessage = getText(Stash_WithdrawConfirmationSelectors.txtConfirmationMessage);
 		String expectedMessage = "You moved "+withdrawalAmount+" from "+stashType+" to your Tonik account. Now you’ve got cash. Date night?";
 		softAssertion.assertEquals(actualMessage, expectedMessage);
-
+		softAssertion.assertAll();
 		System.out.println("===> actualMessage: "+actualMessage);
 		click(Stash_WithdrawConfirmationSelectors.btnOhYeah, "Oh Yeah!");
 	}
