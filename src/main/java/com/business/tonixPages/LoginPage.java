@@ -5,36 +5,30 @@ import org.testng.Assert;
 
 public class LoginPage extends BasePage {
 
-//    public LoginPage(String Application) throws InterruptedException {
-//        super(Application);
-//    }
-
     public LoginPage() throws InterruptedException {
         super();
     }
 
     /**
-     * Business method for Tonix Application Launch
-     *
+     * Perform login into application
+     * Entering password stored in testdata.properties - password field and clicking on login button
      */
-
     public void performLogin() throws Exception {
-        extent.HeaderChildNode("Tonix Login");
+        extent.HeaderChildNode("Tonix Login Page");
 
-        explicitWaitVisibility(LoginSelectors.txtPageTitle,10);
-        if(verifyElementPresent(LoginSelectors.edtPassword, "Password edit field")) {
+        if(waitForElementToBePresent(LoginSelectors.edtPassword, 60,"Password edit field")) {
             String camPermHeaderTxt = getText(LoginSelectors.edtPassword);
             Assert.assertEquals(camPermHeaderTxt, "Password");
             click(LoginSelectors.edtPassword, "Password field");
             type(LoginSelectors.edtPassword  , prop.getproperty("password"), "Enter secret code");
             //waitForElementAndClickIfPresent()
             waitForElementAndClickIfPresent(LoginSelectors.btnLogin, 20,"Log in button");
-            logger.info("Logging into Tonix");
-            extent.extentLoggerPass("Tonix Login", "Logging into tonix");
+            logger.info("Logging into Tonix app");
+            extent.extentLoggerPass("Login Page", "Clicked on Login button after entering password");
         }
         else {
-            logger.info("Popup is not displayed");
-            extent.extentLoggerFail("Allow popup", "Allow popup not displayed");
+            logger.info("Login page not loaded");
+            extent.extentLoggerFail("Login page", "Login page is not loaded successfully");
         }
     }
 }

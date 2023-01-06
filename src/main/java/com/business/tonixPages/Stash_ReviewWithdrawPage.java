@@ -8,25 +8,27 @@ public class Stash_ReviewWithdrawPage extends BasePage {
 		super();
 	}
 
-	/*
-		Verify if page is loaded successfully
-		Parameters: none
+	/**
+	 * Verify Withdraw review page is loaded successfully
+	 * Checking if page title as Review withdrawal is displayed
 	 */
-	public void verifyPageLoaded() throws Exception {
+	public boolean verifyPageLoaded() throws Exception {
 		extent.HeaderChildNode("Page loaded verification: Withdraw from your Stash ");
 
 		waitTime(2000);
-		if(verifyElementPresent(Stash_ReviewWithdrawalSelectors.txtReviewWithdrawal, "Review Withdrawal text"))
+		if(waitForElementToBePresent(Stash_ReviewWithdrawalSelectors.txtReviewWithdrawal, 60,"Review Withdrawal text"))
 		{
 			extent.extentLoggerPass("Page loaded ('Review Withdrawal')", "'Review Withdrawal' page loaded successfully");
+			return true;
 		}
 		else
 		{
 			extent.extentLoggerFail("Page not loaded ('Review Withdrawal')", "'Review Withdrawal' page loaded successfully");
+			return false;
 		}
 	}
 
-	/*
+	/**
 		Verify withdrawal amount, stash type, to account information in Review Withdraw page
 		Parameters:
 			withdrawalAmount - Amount to be withdrawn
@@ -37,19 +39,17 @@ public class Stash_ReviewWithdrawPage extends BasePage {
 		extent.HeaderChildNode("Review withdrawal amount");
 		waitTime(2000);
 
-		this.verifyPageLoaded();
+		if(this.verifyPageLoaded()) {
+			String actualWithdrawalAmount = getText(Stash_ReviewWithdrawalSelectors.txtAmountValue).substring(1);
+			String actualStashType = getText(Stash_ReviewWithdrawalSelectors.txtFromValue);
+			String actualToAccount = getText(Stash_ReviewWithdrawalSelectors.txtToValue);
+			softAssertion.assertEquals(withdrawalAmount, actualWithdrawalAmount);
+			softAssertion.assertEquals(stashType, actualStashType);
+			softAssertion.assertEquals(toAccount, actualToAccount);
+			softAssertion.assertAll();
 
-		String isButtonClickable = getAttributValue("clickable", Stash_ReviewWithdrawalSelectors.btnConfirm);
-
-		String actualWithdrawalAmount = getText(Stash_ReviewWithdrawalSelectors.txtAmountValue).substring(1);
-		String actualStashType = getText(Stash_ReviewWithdrawalSelectors.txtFromValue);
-		String actualToAccount = getText(Stash_ReviewWithdrawalSelectors.txtToValue);
-		softAssertion.assertEquals(withdrawalAmount, actualWithdrawalAmount);
-		softAssertion.assertEquals(stashType, actualStashType);
-		softAssertion.assertEquals(toAccount, actualToAccount);
-		softAssertion.assertAll();
-
-		click(Stash_ReviewWithdrawalSelectors.btnConfirm, "Confirm");
-		waitTime(2000);
+			click(Stash_ReviewWithdrawalSelectors.btnConfirm, "Confirm");
+			waitTime(2000);
+		}
 	}
 }
