@@ -1911,6 +1911,39 @@ public class Utilities extends ExtentReporter {
 		return false;
 	}
 
+	public boolean waitForElementToBePresent(By locator, int seconds, String message)
+			throws InterruptedException {
+		try {
+			if (getPlatform().equals("Web")) {
+				for (int time = 0; time <= seconds; time++) {
+					try {
+						getWebDriver().findElement(locator);
+						logger.info("Clicked element " + message);
+						extent.extentLogger("clickedElement", "Clicked element " + message);
+						return true;
+					} catch (Exception e) {
+						Thread.sleep(1000);
+					}
+				}
+			} else if (getPlatform().equals("Android") || getPlatform().equals("MPWA")) {
+				for (int time = 0; time <= seconds; time++) {
+					try {
+						getDriver().findElement(locator);
+						logger.info("Clicked on " + message);
+						extent.extentLogger("clickedElement", "Clicked on " + message);
+						return true;
+					} catch (Exception e) {
+						Thread.sleep(1000);
+					}
+				}
+			}
+		} catch (Exception e) {
+			logger.error(e);
+			screencapture();
+		}
+		return false;
+	}
+
 	public String RandomStringGenerator(int n) {
 		{
 
