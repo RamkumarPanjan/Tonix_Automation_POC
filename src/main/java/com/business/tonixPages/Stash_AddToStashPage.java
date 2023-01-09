@@ -9,23 +9,32 @@ public class Stash_AddToStashPage extends BasePage {
 	    }
 
 	    /**
-	     * Business method for RingPay Application Launch
-	     *
+	     * Verify Add to stash page is loaded successfully
+	     * Entering the edit amount eg:500
+	     * 
 	     */
 
-	    public void addToStash(String stashAmount) throws Exception {
+	    public void addToStash(String stashAmount) throws Exception 
+	    {
 	        extent.HeaderChildNode("Add to stash");
-	        
 	        Thread.sleep(5000);
-	        explicitWaitVisibility(Stash_AddToStashSelectors.txtAddToStashh,120);
+	        waitForElementToBePresent(Stash_AddToStashSelectors.txtAddToStashh, 60, "Add to stash text");
 	        Thread.sleep(5000);
 	        
-	        if(ifElementPresent(Stash_AddToStashSelectors.txtBalance, "'Balance' text")) {
-            	verifyElementPresent(Stash_AddToStashSelectors.txtBalance,"Balance text");
+	        if(ifElementPresent(Stash_AddToStashSelectors.txtBalance, "'Balance' text")) 
+	        {
+            	//verifyElementPresent(Stash_AddToStashSelectors.txtBalance,"Balance text");
 	        }
-	        if(verifyElementPresent(Stash_AddToStashSelectors.edtAmount, "Edit amount")) {
+	        else 
+	        {
+	        	logger.info("Balance text not present");
+	            extent.extentLoggerFail("Balance", "Not present in add to stash page");
+	        }
+	        
+	        if(verifyElementPresent(Stash_AddToStashSelectors.edtAmount, "Edit amount")) 
+	        {
 	            //String camPermHeaderTxt = getText(Stash_AddToStashSelectors.edtAddToStash);
-	           Thread.sleep(5000);
+	            Thread.sleep(5000);
 	            click(Stash_AddToStashSelectors.edtAmount, "click on edit amount");
 	            type(Stash_AddToStashSelectors.edtAmount  ,stashAmount, "Enter amount");
 	            hideKeyboard();
@@ -33,7 +42,8 @@ public class Stash_AddToStashPage extends BasePage {
 	            logger.info("Adding to stash");
 	            extent.extentLoggerPass("Add to Stash", "Clicked on 'Add to Stash' text in add to stash page");
 	        }
-	        else {
+	        else
+	        {
 	            logger.info("Not added to stash");
 	            extent.extentLoggerFail("Add to Stash", "Not clicked on 'Add to stash' text in add to stash page");
 	        }

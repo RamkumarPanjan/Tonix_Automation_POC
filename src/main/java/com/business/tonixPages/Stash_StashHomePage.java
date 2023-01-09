@@ -8,6 +8,12 @@ public class Stash_StashHomePage extends BasePage {
 	public Stash_StashHomePage() throws InterruptedException {
 		super();
 	}
+	
+	/**
+     * Verify Add to stash page is loaded successfully
+	 * Checking if add to stash is displayed
+     * Checking stash achieved and goal achieved validations are displayed
+     */
 
 	public void clickStartANewStash() throws Exception {
 		extent.HeaderChildNode("Click on Start a new stash");
@@ -37,62 +43,49 @@ public class Stash_StashHomePage extends BasePage {
 		}
 	}
 
-	public void clickAddToStash() throws Exception {
+	public void clickAddToStash() throws Exception 
+	{
 		extent.HeaderChildNode("Click on 'Add to stash' text");
-		
 		waitTime(2000);
-        if(ifElementPresent(Stash_StashHomeSelectors.txtAddToStash, "'Add to Stash' text")) {
+        if(ifElementPresent(Stash_StashHomeSelectors.txtAddToStash, "'Add to Stash' text"))
+        {
             waitForElementAndClickIfPresent(Stash_StashHomeSelectors.txtAddToStash, 20,"Click 'Add to Stash' text in stash page");
             logger.info("Adding to stash");
             extent.extentLoggerPass("Add to Stash", "Clicked on 'Add to Stash' text in stash page");
         }
-        else {
+        else 
+        {
             logger.info("Not added to stash");
             extent.extentLoggerFail("Add to Stash", "Not clicked on 'Add to stash' text in stash page");
         }
 	}
 	
-   public void verifyStashAchieved() throws InterruptedException, Exception {
-        extent.HeaderChildNode("Verify 'Achieved' text");
-    		
+   public void verifyStashAchieved() throws InterruptedException, Exception 
+   {
+        extent.HeaderChildNode("Verify 'Achieved' text");	
     	waitTime(2000);
-        if(ifElementPresent(Stash_StashHomeSelectors.txtAchieved, "'Achieved' text")) {
-           verifyElementPresent(Stash_StashHomeSelectors.txtAchieved, "Verify 'Achieved' text in stash page");
+        if(ifElementPresent(Stash_StashHomeSelectors.txtAchieved, "'Achieved' text")) 
+        {
+           //verifyElementPresent(Stash_StashHomeSelectors.txtAchieved, "Verify 'Achieved' text in stash page");
            logger.info("Achieved");
            extent.extentLoggerPass("Achieved", "Verified 'Achieved' text in stash page");
-            }
-        else {
+        }
+        else 
+        {
             logger.info("Not achieved");
             extent.extentLoggerFail("Achieved", "Not verified 'Achieved' text in stash page");
-            }
         }
+    }
         
-       public void verifyGoalAchieved() throws Exception {
+       public void verifyGoalAchieved() throws Exception
+       {
     		extent.HeaderChildNode("Verify 'Goal achieved' text");
-
     		String actualMessage = getText(Stash_StashHomeSelectors.txtgoalachieved);
     		String expectedMessage = "Congrats! Goal achieved!";
     		softAssertion.assertEquals(actualMessage, expectedMessage);
-
+    		softAssertion.assertAll();
     		System.out.println("actualMessage: "+actualMessage);
-
     	}
-        
-       /* public void verifyGoalAchieved() throws InterruptedException, Exception
-        {
-        	extent.HeaderChildNode("Verify 'Goal achieved' text");
-    		
-    		waitTime(2000);
-            if(ifElementPresent(Stash_StashHomeSelectors.txtgoalachieved, "'Goal achieved' text")) {
-            	verifyElementPresent(Stash_StashHomeSelectors.txtAchieved,"Verify 'Goal achieved' text in stash page");
-                logger.info("Goal achieved");
-                extent.extentLoggerPass("Goal achieved", "Verified 'Goal achieved' text in stash page");
-            }
-            else {
-                logger.info("Goal not achieved");
-                extent.extentLoggerFail("Goal not achieved", "Not verified 'Goal achieved' text in stash page");
-            }
-        }*/
 	}
 
 
