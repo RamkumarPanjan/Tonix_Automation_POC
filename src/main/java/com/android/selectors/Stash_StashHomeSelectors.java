@@ -36,6 +36,8 @@ public class Stash_StashHomeSelectors {
     
     public static By txtgoalachieved=By.xpath("//*[@text='Congrats! Goal achieved!']");
     
+    public static By txtEducation=By.xpath("//android.widget.TextView[@text='Education']");
+    
     //Add to stash page
     //public static By txtAddToStash=By.xpath("//*[@class='android.widget.TextView' and @text='Add to Stash']");
     

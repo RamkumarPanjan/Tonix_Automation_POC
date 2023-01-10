@@ -23,7 +23,7 @@ public class Stash_ConfirmTransferToStashPage extends BasePage
 	        
 	        if(waitForElementToBePresent(Stash_ConfirmTransferToStashSelectors.txtConfirmTransferToStash,60, "Confirm transfer to stash text"))
 	        {
-		        String actualeditAmount = getText(Stash_ConfirmTransferToStashSelectors.txtAmount).substring(1);
+		        String actualeditAmount = getText(Stash_ConfirmTransferToStashSelectors.txtAmount);
 				String actualfromAccount = getText(Stash_ConfirmTransferToStashSelectors.txtFrom);
 				String actualtoStashType = getText(Stash_ConfirmTransferToStashSelectors.txtTo);
 				String actualstashOwner = getText(Stash_ConfirmTransferToStashSelectors.txtStashOwner);

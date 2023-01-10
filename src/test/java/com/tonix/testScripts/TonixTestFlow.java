@@ -27,7 +27,7 @@ public class TonixTestFlow extends BaseTestCase {
 		// Nithya
 		stashHomePage.clickAddToStash();
 		stashAddToStashPage.addToStash("500");
-		stashConfirmTransferToStashPage.confirmTransferToStash("500.00", prop.getproperty("mainAccount"),prop.getproperty("educationStash"),prop.getproperty("ownerStash"));
+		stashConfirmTransferToStashPage.confirmTransferToStash("₱500.00", prop.getproperty("mainAccount"),prop.getproperty("educationStash"),prop.getproperty("ownerStash"));
 		stashMoneyStashPage.moneyStashed();
 		stashHomePage.verifyStashAchieved();
 		ExtentReporter.jiraID = "TON-3";
@@ -38,7 +38,7 @@ public class TonixTestFlow extends BaseTestCase {
 		// Nithya
 		stashHomePage.clickAddToStash();
 		stashAddToStashPage.addToStash("500");
-		stashConfirmTransferToStashPage.confirmTransferToStash("500.00", prop.getproperty("mainAccount"),prop.getproperty("educationStash"),prop.getproperty("ownerStash"));
+		stashConfirmTransferToStashPage.confirmTransferToStash("₱500.00", prop.getproperty("mainAccount"),prop.getproperty("educationStash"),prop.getproperty("ownerStash"));
 		stashMoneyStashPage.moneyStashed();
 		ExtentReporter.jiraID = "TON-3";
 	}

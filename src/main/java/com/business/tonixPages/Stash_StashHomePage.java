@@ -47,9 +47,9 @@ public class Stash_StashHomePage extends BasePage {
 	{
 		extent.HeaderChildNode("Click on 'Add to stash' text");
 		waitTime(2000);
-        if(ifElementPresent(Stash_StashHomeSelectors.txtAddToStash, "'Add to Stash' text"))
+        if(waitForElementToBePresent(Stash_StashHomeSelectors.txtAddToStash, 60, "'Add to Stash' text"))
         {
-            waitForElementAndClickIfPresent(Stash_StashHomeSelectors.txtAddToStash, 20,"Click 'Add to Stash' text in stash page");
+            click(Stash_StashHomeSelectors.txtAddToStash,"Click 'Add to Stash' text in stash page");
             logger.info("Adding to stash");
             extent.extentLoggerPass("Add to Stash", "Clicked on 'Add to Stash' text in stash page");
         }
@@ -64,7 +64,7 @@ public class Stash_StashHomePage extends BasePage {
    {
         extent.HeaderChildNode("Verify 'Achieved' text");	
     	waitTime(2000);
-        if(ifElementPresent(Stash_StashHomeSelectors.txtAchieved, "'Achieved' text")) 
+        if(waitForElementToBePresent(Stash_StashHomeSelectors.txtAchieved, 60, "'Achieved' text")) 
         {
            //verifyElementPresent(Stash_StashHomeSelectors.txtAchieved, "Verify 'Achieved' text in stash page");
            logger.info("Achieved");
@@ -86,7 +86,25 @@ public class Stash_StashHomePage extends BasePage {
     		softAssertion.assertAll();
     		System.out.println("actualMessage: "+actualMessage);
     	}
+       
+       public void clickEducationStash() throws Exception
+       
+       {
+    	    waitTime(2000);
+    	    extent.HeaderChildNode("Click on 'Education' text");
+    	    
+   		    if(verifyElementPresent(Stash_StashHomeSelectors.txtEducation, "Education text"))
+   		{
+   			click(Stash_StashHomeSelectors.txtEducation, "Education text");
+   			extent.extentLoggerPass("Education text", "Clicked on 'Education' text in stash main page");
+   		}
+   		else
+   		{
+   			extent.extentLoggerFail("Education text not clicked", "Unable to click on 'Education' text in stash home page");
+   		}  
+       }
 	}
+
 
 
 
