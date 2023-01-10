@@ -1918,8 +1918,8 @@ public class Utilities extends ExtentReporter {
 				for (int time = 0; time <= seconds; time++) {
 					try {
 						getWebDriver().findElement(locator);
-						logger.info("Clicked element " + message);
-						extent.extentLogger("clickedElement", "Clicked element " + message);
+						logger.info("Verified element " + message +" is present");
+						extent.extentLogger("verifyElement", "Verified element " + message+" is present");
 						return true;
 					} catch (Exception e) {
 						Thread.sleep(1000);
@@ -1929,8 +1929,8 @@ public class Utilities extends ExtentReporter {
 				for (int time = 0; time <= seconds; time++) {
 					try {
 						getDriver().findElement(locator);
-						logger.info("Clicked on " + message);
-						extent.extentLogger("clickedElement", "Clicked on " + message);
+						logger.info("Verified element " + message +" is present");
+						extent.extentLogger("verifyElement", "Verified element " + message+" is present");
 						return true;
 					} catch (Exception e) {
 						Thread.sleep(1000);
