@@ -23,7 +23,7 @@ public class Stash_WithdrawConfirmationPage extends BasePage {
 		}
 		else
 		{
-			extent.extentLoggerFail("Page not loaded ('Withdrawal Confirmation')", "'Withdrawal Confirmation' page loaded successfully");
+			extent.extentLoggerFail("Page not loaded ('Withdrawal Confirmation')", "'Withdrawal Confirmation' page not loaded successfully");
 			return false;
 		}
 	}
