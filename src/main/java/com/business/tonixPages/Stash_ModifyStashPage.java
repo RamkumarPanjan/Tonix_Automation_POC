@@ -70,10 +70,11 @@ public class Stash_ModifyStashPage extends BasePage {
 		softAssertion.assertAll();
 		clearField(Stash_ModifyStashSelectors.edittxtStashFor, "Stash For text Field");
 		Aclick(Stash_ModifyStashSelectors.edittxtStashFor, "text field");
+	    waitTime(2000);
+		type(Stash_ModifyStashSelectors.edittxtStashFor, stashNewName, " into stash For text Field");
 		waitTime(3000);
 		hideKeyboard();
-		waitTime(2000);
-		type(Stash_ModifyStashSelectors.edittxtStashFor, stashNewName, " into stash For text Field");
+
 	}
 
 	/**
@@ -105,6 +106,8 @@ public class Stash_ModifyStashPage extends BasePage {
 		clearField(Stash_ModifyStashSelectors.edittxtTargetamount, "Target Amount text Field");
 		Aclick(Stash_ModifyStashSelectors.edittxtTargetamount, "text field");
 		type(Stash_ModifyStashSelectors.edittxtTargetamount, stashNewAmount, " into target amount Field");
+		hideKeyboard();
+		waitTime(2000);
 	}
 	/**
 	 * Click on the Save button
@@ -116,5 +119,52 @@ public class Stash_ModifyStashPage extends BasePage {
 		} else {
 			extent.extentLoggerFail("Save button ('Modify Stash')", "Unable to click on 'Save' button");
 		}
+	}
+	/**
+	 * This Business Method is to verify stash Name Error Message
+	 * @throws Exception
+	 */
+	
+	public void verifyStashNameErrorMessage() throws Exception {
+		String StashNameErrormessage = getText(Stash_ModifyStashSelectors.txtPleaseEnterAValidStashName);
+		System.out.println(StashNameErrormessage);
+		softAssertion.assertEquals("Please enter a valid stash name", StashNameErrormessage);
+        softAssertion.assertAll();
+	}
+	/**
+	 * This Business method is to verify Stash Amount Error Message
+	 * @throws Exception
+	 */
+	public void verifyStashAmountErrorMessage() throws Exception {
+		String actualLessThanInputAmountError = getText(Stash_ModifyStashSelectors.txtMinAmountCanBePeso);
+		System.out.println(actualLessThanInputAmountError);
+		softAssertion.assertEquals("Min amount can be 1000 Peso.", actualLessThanInputAmountError);
+		softAssertion.assertAll();
+	}
+	
+	/**
+	 * This Business Method is to Enter Less Input characters and verify Error message
+	 * @param stashName
+	 * @param stashNewNameWithTwoCharacters
+	 * @param stashNewName
+	 * @throws Exception
+	 */
+	public void checkStashNameWithLessInput(String stashName, String stashNewNameWithTwoCharacters, String stashNewName) throws Exception {
+		extent.HeaderChildNode("check with Less Input characters");
+		modifyStashName(stashName, stashNewNameWithTwoCharacters);
+		modifyStashName(stashNewNameWithTwoCharacters, stashNewName);
+		
+	}
+	/**
+	 * This Business method is enter Target Amount less Input digits and verify Error Message
+	 * @param stashAmount
+	 * @param stashNewamountWithThreeDigits
+	 * @param stashNewAmount
+	 * @throws Exception
+	 */
+	public void checkStashAmountWithLessInput(String stashAmount,String stashNewamountWithThreeDigits, String stashNewAmount) throws Exception {
+		extent.HeaderChildNode("check with Less Input Numbers");
+		modifyStashAmount(stashAmount, stashNewamountWithThreeDigits);
+		modifyStashAmount(stashNewamountWithThreeDigits, stashNewAmount);
 	}
 }

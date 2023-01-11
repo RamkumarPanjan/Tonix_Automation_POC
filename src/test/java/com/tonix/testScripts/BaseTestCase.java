@@ -30,6 +30,7 @@ public class BaseTestCase {
     protected com.business.tonixPages.Stash_AddToStashPage stashAddToStashPage;
     protected com.business.tonixPages.Stash_ConfirmTransferToStashPage stashConfirmTransferToStashPage;
     protected com.business.tonixPages.Stash_MoneyStashPage stashMoneyStashPage;
+    protected com.business.tonixPages.Stash_StashDetailsPage stashDetailsPage;
 
     public static PropertyFileReader prop = new PropertyFileReader(".\\properties\\testdata.properties");
 
@@ -59,6 +60,7 @@ public class BaseTestCase {
         stashAddToStashPage=new com.business.tonixPages.Stash_AddToStashPage();
         stashConfirmTransferToStashPage=new com.business.tonixPages.Stash_ConfirmTransferToStashPage();
         stashMoneyStashPage=new com.business.tonixPages.Stash_MoneyStashPage();
+        stashDetailsPage=new com.business.tonixPages.Stash_StashDetailsPage();
     }
 
     @AfterTest

@@ -9,7 +9,8 @@ public class Stash_SoloStashCreatedPage extends BasePage
 		super();
 	}
 	  /**
-	   * This method is used to verify the Solo Stash created successfully 
+	   * This Business method is to Confirmation of Solo Stash created successfully.
+	   *  
 	   */
 	   public void soloStashCreated() throws Exception 
 	   {

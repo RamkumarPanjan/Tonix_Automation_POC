@@ -125,4 +125,45 @@ public class Stash_ManageStashPage extends BasePage {
 			extent.extentLoggerFail("Yes close the Stash", "Unable to click on Yes close the Stash text in Manage Stash page");
 		}
 	}
+	
+	/**
+	 * Handling close the Stash confirmation By clicking On Stay and Yes, Close the Stash link 
+	 * @throws Exception
+	 */
+	
+	public void clickStayAndCloseStashConfirmation() throws Exception {
+		extent.HeaderChildNode("Click on stay on the pop-up for closing the stash");
+		waitTime(2000);
+		ConfirmationCloseStashPopUP();
+		clickClose();
+		if(verifyElementPresent(Stash_ManageStashSelectors.txtYesCloseStash, "Yes close the Stash"))
+		{
+			click(Stash_ManageStashSelectors.txtYesCloseStash, "Yes close the Stash");
+			extent.extentLoggerPass("Yes Close the Stash", "Clicked on Yes close the Stash text in Manage Stash page");
+		}
+		else
+		{
+			extent.extentLoggerFail("Yes close the Stash", "Unable to click on Yes close the Stash text in Manage Stash page");
+		}
+	}
+	
+	public void ConfirmationCloseStashPopUP() throws Exception {
+		extent.HeaderChildNode("Pop-Up closed verification: Manage Stash ");
+
+		waitTime(2000);
+		if(verifyElementPresent(Stash_ManageStashSelectors.btnStay, "Pop-up is opened, Stay Button"))
+		{
+			click(Stash_ManageStashSelectors.btnStay, "stay Button");
+			extent.extentLoggerPass("Pop-Up closed ","Close the stash pop-up is closed successfully");
+		}
+		if(verifyElementPresent(Stash_ManageStashSelectors.txtAreYouSureConfirmation, "Pop-up is closed, Are you sure ,You want to close the stash "))
+		{
+			extent.extentLoggerPass("Pop-Up closed","Close the stash pop-up is closed successfully");
+		}
+		else
+		{
+			extent.extentLoggerFail("Pop-Up is not closed ('Manage Stash')", "'Manage Stash' page loaded successfully");
+		}	
+	}
+
 }
