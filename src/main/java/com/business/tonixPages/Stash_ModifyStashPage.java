@@ -104,7 +104,7 @@ public class Stash_ModifyStashPage extends BasePage {
 		softAssertion.assertAll();
 		clearField(Stash_ModifyStashSelectors.edittxtTargetamount, "Target Amount text Field");
 		Aclick(Stash_ModifyStashSelectors.edittxtTargetamount, "text field");
-		type(Stash_ModifyStashSelectors.edittxtTargetamount, stashAmount, " into target amount Field");
+		type(Stash_ModifyStashSelectors.edittxtTargetamount, stashNewAmount, " into target amount Field");
 	}
 	/**
 	 * Click on the Save button
