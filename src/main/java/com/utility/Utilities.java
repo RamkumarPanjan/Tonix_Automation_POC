@@ -2408,6 +2408,20 @@ public class Utilities extends ExtentReporter {
 		sumAmount = doubleAmountOne+doubleAmountTwo;
 		return String.valueOf(sumAmount);
 	}
+
+	/**
+	 * Subtract two amount and return as String
+	 * @param amountOne
+	 * @param amountTwo
+	 * @return Sum of both parameter as a string
+	 */
+	public static String subtractTwoAmount(String amountOne, String amountTwo) {
+		Double subtractAmount;
+		Double doubleAmountOne = Double.parseDouble(amountOne);
+		Double doubleAmountTwo = Double.parseDouble(amountTwo);
+		subtractAmount = doubleAmountOne-doubleAmountTwo;
+		return String.valueOf(subtractAmount);
+	}
 	
 	public static Object[][] getTestData(String filePath, String sheetName, String testcaseName) throws IOException
 	  {
