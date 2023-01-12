@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 
 public class MainSelectors {
 
-    //
     public static By txtTotalStashBalance = By.xpath("//android.widget.TextView[@text='Total Stash balance']");
 
     public static By txtStashes = By.xpath("//android.widget.TextView[@text='Stashes']");
@@ -14,7 +13,9 @@ public class MainSelectors {
     public static By txtYourTonikAccount = By.xpath("//android.widget.TextView[@text='Your tonik account']");
     
     public static By textStashes =By.xpath("//*[@class='android.widget.TextView' and @text='Stashes']");
-    
+
+	public static By txtTonixAccountBalance = By.xpath("//android.widget.TextView[@text='Your tonik account']/following-sibling::android.widget.TextView[1]");
+
     //
 	
 	public static By txtIndividualstash=By.xpath("//*[@class='android.widget.TextView' and @text='Individual Stash']");
@@ -36,7 +37,5 @@ public class MainSelectors {
 	public static By txtWerkitstash= By.xpath("//*[@class='android.widget.TextView' and @text='#WerkIt']");
 	
 	public static By BtnLetsstartStashing=By.xpath("//*[@class='android.widget.TextView' and @text='Let’s start stashing!']");
-
-
 
 }

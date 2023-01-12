@@ -39,4 +39,28 @@ public class MainPage extends BasePage {
             extent.extentLoggerFail("Your Tonix Account text", "Text 'Your Tonix Account' found in main page");
         }
     }
+
+    /**
+     * Get the tonix account balance
+     */
+    public String getTonikAccounBalance() throws Exception {
+        String accountBalance = getText(MainSelectors.txtTonixAccountBalance);
+        accountBalance = accountBalance.replace("₱","").replace(",","");
+        return accountBalance;
+    }
+
+    /**
+     * verify the tonix account balance
+     */
+    public void verifyTonikAccountBalance(String expectedBalance) throws Exception {
+        extent.HeaderChildNode("Verify Tonix Account Balance");
+        waitTime(2000);
+        String accountBalance = getText(MainSelectors.txtTonixAccountBalance);
+        accountBalance = accountBalance.replace("₱","").replace(",","");
+        if(accountBalance.equals(expectedBalance)) {
+            extent.extentLoggerPass("Tonix Account Balance", "Expected: "+accountBalance);
+        } else {
+            extent.extentLoggerFail("Tonix Account Balance", "Actual: "+accountBalance+", Expected:"+expectedBalance);
+        }
+    }
 }
