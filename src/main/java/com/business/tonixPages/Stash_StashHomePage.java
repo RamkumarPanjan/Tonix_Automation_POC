@@ -62,21 +62,42 @@ public class Stash_StashHomePage extends BasePage {
 		}
 	}
 
-	public void verifyStashAchieved() throws InterruptedException, Exception 
-	{
-		extent.HeaderChildNode("Verify 'Achieved' text");	
-		waitTime(2000);
-		if(waitForElementToBePresent(Stash_StashHomeSelectors.txtAchieved, 60, "'Achieved' text")) 
-		{
-			//verifyElementPresent(Stash_StashHomeSelectors.txtAchieved, "Verify 'Achieved' text in stash page");
-			logger.info("Achieved");
-			extent.extentLoggerPass("Achieved", "Verified 'Achieved' text in stash page");
-		}
-		else 
-		{
-			logger.info("Not achieved");
-			extent.extentLoggerFail("Achieved", "Not verified 'Achieved' text in stash page");
-		}
+//	public void verifyStashAchieved() throws InterruptedException, Exception 
+//	{
+//		extent.HeaderChildNode("Verify 'Achieved' text");	
+//		waitTime(2000);
+//		if(waitForElementToBePresent(Stash_StashHomeSelectors.txtAchieved, 60, "'Achieved' text")) 
+//		{
+//			//verifyElementPresent(Stash_StashHomeSelectors.txtAchieved, "Verify 'Achieved' text in stash page");
+//			logger.info("Achieved");
+//			extent.extentLoggerPass("Achieved", "Verified 'Achieved' text in stash page");
+//		}
+//		else 
+//		{
+//			logger.info("Not achieved");
+//			extent.extentLoggerFail("Achieved", "Not verified 'Achieved' text in stash page");
+//		}
+//	}
+	
+	public void verifyStashAchieved(String achievedAmount, String targetAmount) throws InterruptedException, Exception {
+	        extent.HeaderChildNode("Verify 'Achieved' text");	
+	    	waitTime(2000);
+	    	if(waitForElementToBePresent(Stash_StashHomeSelectors.txtStash, 60, "'Achieved' text"))
+	    	{
+		    	String actualMessage = getText(Stash_StashHomeSelectors.txtAchieved);
+		    	String result = actualMessage.replaceAll("\\s+", " ");
+				String expectedMessage = "Achieved "+achievedAmount+" of "+targetAmount;
+				softAssertion.assertEquals(result, expectedMessage);
+				softAssertion.assertAll();
+				
+		        logger.info("Achieved");
+		        extent.extentLoggerPass("Achieved", "Verified 'Achieved' text in stash page");
+	        }
+	        else 
+	        {
+	            logger.info("Not achieved");
+	            extent.extentLoggerFail("Achieved", "Not verified 'Achieved' text in stash page");
+	        }
 	}
 
 	public void verifyGoalAchieved() throws Exception

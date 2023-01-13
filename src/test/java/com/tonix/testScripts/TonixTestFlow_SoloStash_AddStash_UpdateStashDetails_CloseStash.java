@@ -1,0 +1,102 @@
+package com.tonix.testScripts;
+
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import com.extent.ExtentReporter;
+import com.utility.Utilities;
+
+public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash extends BaseTestCase {
+	
+	public String tonikAccountBalance;
+	public String tonikNewAccountBalance;
+
+	@Test(priority = 0)
+    public void createStash() throws Exception {
+		//welcomePage.RingPayAppLaunch();
+		loginPage.performLogin();
+		tonikAccountBalance = mainPage.getTonikAccounBalance();
+		System.out.println("Balance:"+tonikAccountBalance);
+		mainPage.clickTotalStashBalance();
+		// Harish
+	    stashHomePage.clickStartANewStash();
+		startNewStaShPage.clickOpenANewStash();
+		startNewStaShPage.selectSoloStashType();
+		stashSetupPage.enterDetailsIntoSetupYourStash(prop.getproperty("educationStash"),"1000");
+		setInitialSavingPage.clickOnSkipForNow();
+		reviewStashDetailsPage.verifyDetailsAndCreateStash();
+		soloStashCreatedPage.soloStashCreated();
+		ExtentReporter.jiraID = "TON-2";
+	}
+
+	@Test(priority = 1)
+	public void addToStash() throws Exception {
+		// Nithya
+		stashHomePage.clickAddToStash();
+		stashAddToStashPage.addToStash("750");
+		stashConfirmTransferToStashPage.confirmTransferToStash("₱750.00", prop.getproperty("mainAccount"),prop.getproperty("educationStash"),prop.getproperty("ownerStash"));
+		//stashMoneyStashPage.clickViewDetailsText();
+        stashMoneyStashPage.moneyStashed();
+	}
+	
+	@Test(priority = 2)
+	public void modifyStashName() throws Exception {
+        stashHomePage.clickManage();
+//        manageStashPage.clickStashDetails();
+//        stashDetailsPage.stashDetails("₱1,000.00");
+        manageStashPage.clickModify();
+        modifyStashPage.modifyStashName(prop.getproperty("educationStash"), "AB");
+        modifyStashPage.verifyStashNameErrorMessage();
+        modifyStashPage.modifyStashName("AB", prop.getproperty("travellingStash"));
+        updatedStashPage.verifyUpdatedStashConfirmationMessage();
+    }	
+	
+	@Test(priority = 3)
+	public void modifyStashAmount() throws Exception {
+        stashHomePage.clickManage();
+        manageStashPage.clickModify();
+        modifyStashPage.modifyStashAmount("1,000.00", "900");
+        modifyStashPage.verifyStashAmountErrorMessage();
+        modifyStashPage.modifyStashAmount("900", "1500");
+        updatedStashPage.verifyUpdatedStashConfirmationMessage();
+    }		
+	
+	@Test(priority = 4)
+	public void addToStashAgain() throws Exception {
+		// Nithya
+		stashHomePage.clickAddToStash();
+		stashAddToStashPage.addToStash("750");
+		stashConfirmTransferToStashPage.confirmTransferToStash("₱750.00", prop.getproperty("mainAccount"),prop.getproperty("travellingStash"),prop.getproperty("ownerStash"));
+		//stashMoneyStashPage.clickViewDetailsText();
+        stashMoneyStashPage.moneyStashed();
+	}	
+	
+	
+	@Test(priority = 5)
+    public void verifyNoEnoughBalanceMessage() throws Exception {
+        // Ramkumar
+        stashHomePage.clickManage();
+        manageStashPage.clickWithdrawToYourTonikAccount();
+        //withdrawFromYourStashPage.verifyPageLoaded();
+        withdrawFromYourStashPage.withDrawAmount("1,500.00","2000");
+        withdrawFromYourStashPage.verifyNoEnoughBalanceMessage("1,500.00");
+        withdrawFromYourStashPage.withDrawAmount("2,000","1500");
+        // ExtentReporter.jiraID = "TON-7";
+
+ 	   reviewWithdrawPage.reviewWithdrawalInfo("1,500.00", prop.getproperty("travellingStash"), prop.getproperty("mainAccount"));
+ 	   reviewWithdrawPage.clickConfirm();
+ 	   withdrawConfirmationPage.verifyConfirmationMessage("₱1,500.00",prop.getproperty("travellingStash"));
+ 	   withdrawConfirmationPage.clickOhYeahButton();
+    }	
+
+	@Test(priority = 6)
+	public void closeStash() throws Exception {
+		//Harish - Close the stash
+		stashHomePage.clickManage();
+		manageStashPage.clickClose();
+		manageStashPage.handleCloseStashConfirmation();
+		stashClosePage.brokeTheStash();
+		ExtentReporter.jiraID = "TON-8";
+
+	}
+
+}
