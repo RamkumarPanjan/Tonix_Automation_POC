@@ -11,12 +11,12 @@ public class Stash_CreatedStashPage extends BasePage{
 	}
 
 
-	public void createdStashDateAndName(String creditName, String creditAmount,String creditText) throws Exception
+	public void createdStashDateAndName(String creditName, String creditText,String creditAmount) throws Exception
 	{
 		extent.HeaderChildNode("verifying stash Credit and time");
 		dateComparisonWithoutTime();
-		String[]  actualTodayDate = getText(Stash_CreatedStashSelectors.txtTodayDate).split(",");
-		System.out.println(actualTodayDate.toString());
+		String  actualTodayDate = getText(Stash_CreatedStashSelectors.txtTodayDate).substring(7, 18);
+		System.out.println(actualTodayDate);
 		String actualCreditName = getText(Stash_CreatedStashSelectors.txtMyselfCreditName);
 		System.out.println(actualCreditName);
 		String actualcreditText = getText(Stash_CreatedStashSelectors.txtCredit);
