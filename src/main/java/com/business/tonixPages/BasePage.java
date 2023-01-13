@@ -120,4 +120,9 @@ public class BasePage extends Utilities {
 		return formattedDate;
 	}
 
+	public void moveToPreviousPage(int count) {
+		Back(count);
+		waitTime(6000);
+	}
+
 }

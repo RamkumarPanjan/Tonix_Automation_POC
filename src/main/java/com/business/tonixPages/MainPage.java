@@ -57,6 +57,8 @@ public class MainPage extends BasePage {
         waitTime(2000);
         String accountBalance = getText(MainSelectors.txtTonixAccountBalance);
         accountBalance = accountBalance.replace("₱","").replace(",","");
+        if(accountBalance.endsWith(".0"))
+            accountBalance = accountBalance.replace(".0",".00");
         if(accountBalance.equals(expectedBalance)) {
             extent.extentLoggerPass("Tonix Account Balance", "Expected: "+accountBalance);
         } else {
