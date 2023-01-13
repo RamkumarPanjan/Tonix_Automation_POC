@@ -31,7 +31,10 @@ public class BaseTestCase {
     protected com.business.tonixPages.Stash_ConfirmTransferToStashPage stashConfirmTransferToStashPage;
     protected com.business.tonixPages.Stash_MoneyStashPage stashMoneyStashPage;
     protected com.business.tonixPages.Stash_StashDetailsPage stashDetailsPage;
-    protected com.business.tonixPages.Stash_CreatedStashPage createdStashPage;
+    protected com.business.tonixPages.Stash_AchievedPage stashAchievedPage;
+    protected com.business.tonixPages.Stash_CongratsGoalAchievedPage stashCongratsGoalAchievedPage;
+    protected com.business.tonixPages.Stash_HowMuchWillYouInvestPage stashHowMuchWillYouInvestPage;
+    protected com.business.tonixPages.Stash_YouBrokeTheStashPage stashYouBrokeTheStashPage;
 
     public static PropertyFileReader prop = new PropertyFileReader(".\\properties\\testdata.properties");
 
@@ -62,7 +65,10 @@ public class BaseTestCase {
         stashConfirmTransferToStashPage=new com.business.tonixPages.Stash_ConfirmTransferToStashPage();
         stashMoneyStashPage=new com.business.tonixPages.Stash_MoneyStashPage();
         stashDetailsPage=new com.business.tonixPages.Stash_StashDetailsPage();
-        createdStashPage=new com.business.tonixPages.Stash_CreatedStashPage();
+        stashAchievedPage=new com.business.tonixPages.Stash_AchievedPage();
+        stashCongratsGoalAchievedPage=new com.business.tonixPages.Stash_CongratsGoalAchievedPage();
+        stashHowMuchWillYouInvestPage=new com.business.tonixPages.Stash_HowMuchWillYouInvestPage();
+        stashYouBrokeTheStashPage=new com.business.tonixPages.Stash_YouBrokeTheStashPage();	
     }
 
   /*  @AfterTest

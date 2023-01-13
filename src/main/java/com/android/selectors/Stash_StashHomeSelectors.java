@@ -28,7 +28,7 @@ public class Stash_StashHomeSelectors {
     
     public static By txtStashNameInBox=By.xpath("//*[@class='android.widget.ScrollView']/child::android.view.ViewGroup/(child::android.view.ViewGroup)[2]/descendant::android.widget.ImageView/(following-sibling::android.widget.TextView)[1]");
    
-    public static By txtStashNameActual=By.xpath("//*[@text='Start a New Stash']/parent::android.view.ViewGroup/parent::android.view.ViewGroup/parent::android.view.ViewGroup/following-sibling::android.view.ViewGroup/(descendant::android.widget.TextView)[1]");
+    //public static By txtStashNameActual=By.xpath("//*[@text='Start a New Stash']/parent::android.view.ViewGroup/parent::android.view.ViewGroup/parent::android.view.ViewGroup/following-sibling::android.view.ViewGroup/(descendant::android.widget.TextView)[1]");
    
     public static By txtStashNameActual2=By.xpath("(//*[@text='Start a New Stash']/parent::android.view.ViewGroup/parent::android.view.ViewGroup/parent::android.view.ViewGroup/following-sibling::android.view.ViewGroup/(descendant::android.widget.TextView)[1])[2]");
     
@@ -36,7 +36,8 @@ public class Stash_StashHomeSelectors {
     
     public static By txtgoalachieved=By.xpath("//*[@text='Congrats! Goal achieved!']");
     
-    public static By txtEducation=By.xpath("//android.widget.TextView[@text='Education']");
+    public static By txtStash=By.xpath("//*[@class='android.widget.TextView' and contains(@text,'Achieved')]/preceding-sibling::android.widget.TextView");
+    
     
     //Add to stash page
     //public static By txtAddToStash=By.xpath("//*[@class='android.widget.TextView' and @text='Add to Stash']");

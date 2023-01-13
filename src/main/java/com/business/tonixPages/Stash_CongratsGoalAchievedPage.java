@@ -1,6 +1,7 @@
 package com.business.tonixPages;
 
 import com.android.selectors.Stash_CongratsGoalAchievedSelectors;
+import com.android.selectors.Stash_MoneyStashSelectors;
 
 public class Stash_CongratsGoalAchievedPage extends BasePage
 {
@@ -17,6 +18,11 @@ public class Stash_CongratsGoalAchievedPage extends BasePage
 	    public void verifyCongratsGoalAchieved(String targetAmount, String stashBalance, String startingDate, String interestRate, String withholdingTax) throws Exception 
 	    {
 	        extent.HeaderChildNode("Confirm transfer to stash");
+	        
+	        if(ifElementPresent(Stash_MoneyStashSelectors.txtDoItLater, "Money Stashed"))
+	        {
+	            waitForElementAndClickIfPresent(Stash_MoneyStashSelectors.txtDoItLater, 20,"Click Done");
+	        }
 	        
 	        if(waitForElementToBePresent(Stash_CongratsGoalAchievedSelectors.txtCongratsGoalAchieved,60, "Confirm transfer to stash text"))
 	        {
@@ -38,7 +44,6 @@ public class Stash_CongratsGoalAchievedPage extends BasePage
 				System.out.println(actualwithholdingTax);
 				softAssertion.assertAll();
 				
-		        //if(ifElementPresent(Stash_ConfirmTransferToStashSelectors.btnConfirm, "Confirm transfer to stash")) {
 		        waitForElementAndClickIfPresent(Stash_CongratsGoalAchievedSelectors.btnWhatsYourNextStep, 20,"Click confirm transfer to stash");
 		        
 		        logger.info("Confirming transfer to stash");
@@ -52,32 +57,64 @@ public class Stash_CongratsGoalAchievedPage extends BasePage
 	        }
          }
 	    
-	    public void verifynextsteps(String nextStep, String timeDeposit, String higherGoal, String backToStash) throws Exception 
+	    public void verifynextsteps() throws Exception 
 	    {
-	            extent.HeaderChildNode("Confirm transfer to stash");
-	            Thread.sleep(2000);
-		        String actualnextStep = getText(Stash_CongratsGoalAchievedSelectors.txtNextStep);
-				String actualtimeDeposit = getText(Stash_CongratsGoalAchievedSelectors.txtTimeDeposit);
-				String actualhigherGoal = getText(Stash_CongratsGoalAchievedSelectors.txtHigherGoal);
-				String actualbackToStash = getText(Stash_CongratsGoalAchievedSelectors.txtBackToStash);
-				
-				softAssertion.assertEquals(nextStep, actualnextStep);
-				System.out.println(actualnextStep);
-				softAssertion.assertEquals(timeDeposit, actualtimeDeposit);
-				System.out.println(actualtimeDeposit);
-				softAssertion.assertEquals(higherGoal, actualhigherGoal);
-				System.out.println(actualhigherGoal);
-				softAssertion.assertEquals(backToStash, actualbackToStash);
-				System.out.println(actualbackToStash);
-				softAssertion.assertAll();
-				
-         }
+	    	
+	    	if(waitForElementToBePresent(Stash_CongratsGoalAchievedSelectors.txtNextStep, 60, "Money stashed text"))
+	        {
+	    		System.out.println("Next Step");
+	            logger.info("Confirming money stashed");
+	            extent.extentLoggerPass("Confirm money stashed", "Clicked on 'Done' button in money stashed page");
+	        }
+	        else 
+	        {
+	        	logger.info("Money not stashed");
+	            extent.extentLoggerFail("Confirm money stashed", "Not clicked on 'Done' button in money stashed page");
+	        
+	    }
+	    	if(waitForElementToBePresent(Stash_CongratsGoalAchievedSelectors.txtTimeDeposit, 60, "Money stashed text"))
+	        {
+	    		System.out.println("Time deposit");
+	            logger.info("Confirming money stashed");
+	            extent.extentLoggerPass("Confirm money stashed", "Clicked on 'Done' button in money stashed page");
+	        }
+	        else 
+	        {
+	        	logger.info("Money not stashed");
+	            extent.extentLoggerFail("Confirm money stashed", "Not clicked on 'Done' button in money stashed page");
+	        
+	    }
+	    	if(waitForElementToBePresent(Stash_CongratsGoalAchievedSelectors.txtHigherGoal, 60, "Money stashed text"))
+	        {
+	    		System.out.println("Higher Goal");
+	            logger.info("Confirming money stashed");
+	            extent.extentLoggerPass("Confirm money stashed", "Clicked on 'Done' button in money stashed page");
+	        }
+	        else 
+	        {
+	        	logger.info("Money not stashed");
+	            extent.extentLoggerFail("Confirm money stashed", "Not clicked on 'Done' button in money stashed page");
+	        
+	    }
+	    	if(waitForElementToBePresent(Stash_CongratsGoalAchievedSelectors.txtBackToStash, 60, "Money stashed text"))
+	        {
+	    		System.out.println("Back to stash");
+	            logger.info("Confirming money stashed");
+	            extent.extentLoggerPass("Confirm money stashed", "Clicked on 'Done' button in money stashed page");
+	        }
+	        else 
+	        {
+	        	logger.info("Money not stashed");
+	            extent.extentLoggerFail("Confirm money stashed", "Not clicked on 'Done' button in money stashed page");
+	        
+	    }
+	    }
+	            
 	    
 	    public void clickConvertToTimeDeposit() throws Exception
 	    {
 	    	if(waitForElementToBePresent(Stash_CongratsGoalAchievedSelectors.txtTimeDeposit, 60, "Money stashed text"))
 	        {
-	            //waitForElementToBePresent(Stash_MoneyStashSelectors.btnDone, 60, "Money Stashed");
 	            click(Stash_CongratsGoalAchievedSelectors.txtTimeDeposit, "Click Done");
 	            logger.info("Confirming money stashed");
 	            extent.extentLoggerPass("Confirm money stashed", "Clicked on 'Done' button in money stashed page");
@@ -130,7 +167,7 @@ public class Stash_CongratsGoalAchievedPage extends BasePage
 		   {
 	    	if(waitForElementToBePresent(Stash_CongratsGoalAchievedSelectors.txtCloseStash, 60, "Money stashed text"))
 	        {  
-	    		waitForElementToBePresent(Stash_CongratsGoalAchievedSelectors.txtLeaveItAsIs, 60, "Money stashed text");
+	    		System.out.println("Close Stash");
 	    		logger.info("Confirming money stashed");
 	            extent.extentLoggerPass("Confirm money stashed", "Clicked on 'Done' button in money stashed page");
 	        }
@@ -139,13 +176,25 @@ public class Stash_CongratsGoalAchievedPage extends BasePage
 	        	logger.info("Money not stashed");
 	            extent.extentLoggerFail("Confirm money stashed", "Not clicked on 'Done' button in money stashed page");	
 	        }
+	    	
+	    	if(waitForElementToBePresent(Stash_CongratsGoalAchievedSelectors.txtLeaveItAsIs, 60, "Money stashed text"))
+	        {
+	    		System.out.println("Leave It As Is");
+	            logger.info("Confirming money stashed");
+	            extent.extentLoggerPass("Confirm money stashed", "Clicked on 'Done' button in money stashed page");
+	        }
+	        else 
+	        {
+	        	logger.info("Money not stashed");
+	            extent.extentLoggerFail("Confirm money stashed", "Not clicked on 'Done' button in money stashed page");
+	        
+	    }
 		   }
 	    
 	    public void clickLeaveItAsIs() throws InterruptedException, Exception
 	   {
 	    	if(waitForElementToBePresent(Stash_CongratsGoalAchievedSelectors.txtLeaveItAsIs, 60, "Money stashed text"))
 	        {
-	            //waitForElementToBePresent(Stash_MoneyStashSelectors.btnDone, 60, "Money Stashed");
 	            click(Stash_CongratsGoalAchievedSelectors.txtLeaveItAsIs, "Click Done");
 	            logger.info("Confirming money stashed");
 	            extent.extentLoggerPass("Confirm money stashed", "Clicked on 'Done' button in money stashed page");
@@ -158,5 +207,20 @@ public class Stash_CongratsGoalAchievedPage extends BasePage
 	    }	  
 	   }
 	    
-	    
+	    public void clickCloseStash() throws InterruptedException, Exception
+		   {
+		    	if(waitForElementToBePresent(Stash_CongratsGoalAchievedSelectors.txtCloseStash, 60, "Money stashed text"))
+		        {
+		            //waitForElementToBePresent(Stash_MoneyStashSelectors.btnDone, 60, "Money Stashed");
+		            click(Stash_CongratsGoalAchievedSelectors.txtCloseStash, "Click Done");
+		            logger.info("Confirming money stashed");
+		            extent.extentLoggerPass("Confirm money stashed", "Clicked on 'Done' button in money stashed page");
+		        }
+		        else 
+		        {
+		        	logger.info("Money not stashed");
+		            extent.extentLoggerFail("Confirm money stashed", "Not clicked on 'Done' button in money stashed page");
+		        
+		    }	
+		   }	
 }

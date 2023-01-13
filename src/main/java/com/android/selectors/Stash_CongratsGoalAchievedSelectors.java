@@ -16,9 +16,9 @@ public class Stash_CongratsGoalAchievedSelectors
 	
 	public static By txtWithholdingTax=By.xpath("//android.widget.TextView[contains(@text,'Withholding tax')]/following-sibling::android.widget.TextView");
 	
-	public static By btnWhatsYourNextStep=By.xpath("//android.widget.TextView[@text='What's your next step?']");
+	public static By btnWhatsYourNextStep=By.xpath("//android.widget.TextView[contains(@text,'your next step?')]");
 	
-	public static By txtNextStep=By.xpath("//android.widget.TextView[@text,'What's your next step?']");
+	public static By txtNextStep=By.xpath("//android.widget.TextView[contains(@text,'your next step?')]");
 	
 	public static By txtTimeDeposit=By.xpath("//android.widget.TextView[@text='Convert to Time Deposit']");
 	

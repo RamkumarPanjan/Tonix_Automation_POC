@@ -1,6 +1,13 @@
 package com.business.tonixPages;
 
 
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+
+import com.android.selectors.Stash_StartNewStashSelectors;
 import com.android.selectors.Stash_StashHomeSelectors;
 
 public class Stash_StashHomePage extends BasePage {
@@ -60,15 +67,19 @@ public class Stash_StashHomePage extends BasePage {
         }
 	}
 	
-   public void verifyStashAchieved() throws InterruptedException, Exception 
+   public void verifyStashAchieved(String achievedAmount, String targetAmount) throws InterruptedException, Exception 
    {
         extent.HeaderChildNode("Verify 'Achieved' text");	
     	waitTime(2000);
-        if(waitForElementToBePresent(Stash_StashHomeSelectors.txtAchieved, 60, "'Achieved' text")) 
-        {
-           //verifyElementPresent(Stash_StashHomeSelectors.txtAchieved, "Verify 'Achieved' text in stash page");
-           logger.info("Achieved");
-           extent.extentLoggerPass("Achieved", "Verified 'Achieved' text in stash page");
+    	if(waitForElementToBePresent(Stash_StashHomeSelectors.txtStash, 60, "'Achieved' text"))
+    	{
+    	String actualMessage = getText(Stash_StashHomeSelectors.txtAchieved);
+		String expectedMessage = "Achieved "+achievedAmount+" of "+targetAmount;
+		softAssertion.assertEquals(actualMessage, expectedMessage);
+		softAssertion.assertAll();
+		
+        logger.info("Achieved");
+        extent.extentLoggerPass("Achieved", "Verified 'Achieved' text in stash page");
         }
         else 
         {
@@ -93,9 +104,9 @@ public class Stash_StashHomePage extends BasePage {
     	    waitTime(2000);
     	    extent.HeaderChildNode("Click on 'Education' text");
     	    
-   		    if(verifyElementPresent(Stash_StashHomeSelectors.txtEducation, "Education text"))
+   		    if(waitForElementToBePresent(Stash_StashHomeSelectors.txtStash, 60, "Education text"))
    		{
-   			click(Stash_StashHomeSelectors.txtEducation, "Education text");
+   			click(Stash_StashHomeSelectors.txtStash, "Education text");
    			extent.extentLoggerPass("Education text", "Clicked on 'Education' text in stash main page");
    		}
    		else
@@ -103,7 +114,21 @@ public class Stash_StashHomePage extends BasePage {
    			extent.extentLoggerFail("Education text not clicked", "Unable to click on 'Education' text in stash home page");
    		}  
        }
-	}
+   
+       public void verifyStashClosed( String str) throws Exception {
+    	   
+    	  if( verifyElementNotPresentInList(Stash_StashHomeSelectors.txtStash, str)) {
+    		  
+    		  logger.info("Stash is closed");
+    		  extent.extentLoggerPass("Stash is closed", "Selected stash is closed in stash page");
+     		}
+     		else
+     		{
+     			logger.info("Stash is not closed");
+     			extent.extentLoggerFail("Stash is not closed", "Selected stash is closed in stash page");
+     		}
+       }
+       }	
 
 
 

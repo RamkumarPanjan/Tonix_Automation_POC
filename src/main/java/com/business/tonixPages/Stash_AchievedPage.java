@@ -19,13 +19,16 @@ public class Stash_AchievedPage extends BasePage
 		    if(waitForElementToBePresent(Stash_AchievedSelectors.txtStashName, 10, "Balance amount text message")) 
 		    {
 			String actualachievedAmount= getText(Stash_AchievedSelectors.txtAchieved);
-			String expectedachievedAmount = "Achieved "+achievedAmount+"";
+			String expectedachievedAmount = "Achieved "+achievedAmount;
 			softAssertion.assertEquals(actualachievedAmount, expectedachievedAmount);
-			String actualtargetAmount= getText(Stash_AchievedSelectors.txtTarget);
-			String expectedtargetAmount = "Achieved "+targetAmount+"";
-			softAssertion.assertEquals(actualtargetAmount, expectedtargetAmount);
-			softAssertion.assertAll();
+			System.out.println(actualachievedAmount);
 			
+			String actualtargetAmount= getText(Stash_AchievedSelectors.txtTarget);
+			String expectedtargetAmount = " of "+targetAmount;
+			softAssertion.assertEquals(actualtargetAmount, expectedtargetAmount);
+			System.out.println(actualtargetAmount);
+			softAssertion.assertAll();
+			Thread.sleep(3000);
 		} 
 		    else
 		    {

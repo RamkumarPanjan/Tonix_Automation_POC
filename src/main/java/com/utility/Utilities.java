@@ -2468,5 +2468,28 @@ public class Utilities extends ExtentReporter {
 	    fis.close();
 	    return arrayObj;
 	  }
+	public boolean verifyElementNotPresentInList(By byLocator, String str) throws Exception {
+
+   		try {
+   			getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+   			List<WebElement> list = getDriver().findElements(byLocator);
+   			getDriver().manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+   			for(int i=0;i<list.size();i++)
+   			{
+   			String text = list.get(i).getText(); 
+   			System.out.println(text);
+   			
+   				if(str.equalsIgnoreCase(text)){
+   				return false;
+   			}
+   			}
+   		    }
+   		  catch (Exception e) 
+   		 {
+   			return true;
+   		 }
+		return false;
+   		}  
 }
+
 
