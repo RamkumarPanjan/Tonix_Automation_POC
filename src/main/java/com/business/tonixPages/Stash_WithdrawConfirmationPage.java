@@ -44,9 +44,26 @@ public class Stash_WithdrawConfirmationPage extends BasePage {
 			softAssertion.assertEquals(actualMessage, expectedMessage);
 			softAssertion.assertAll();
 			System.out.println("===> actualMessage: "+actualMessage);
-			click(Stash_WithdrawConfirmationSelectors.btnOhYeah, "Oh Yeah!");
 		}
-
 	}
 
+	/**
+	 * Click on View Details link
+	 */
+	public void clickViewDetailsLink() throws Exception {
+		waitTime(2000);
+		if(this.verifyPageLoaded()) {
+			click(Stash_WithdrawConfirmationSelectors.txtViewDetails, "View Details");
+		}
+	}
+
+	/**
+	 * Click on View Details link
+	 */
+	public void clickOhYeahButton() throws Exception {
+		waitTime(2000);
+		if(this.verifyPageLoaded()) {
+			click(Stash_WithdrawConfirmationSelectors.btnOhYeah, "View Details");
+		}
+	}
 }

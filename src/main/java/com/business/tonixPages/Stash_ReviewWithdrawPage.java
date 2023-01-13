@@ -43,13 +43,21 @@ public class Stash_ReviewWithdrawPage extends BasePage {
 			String actualWithdrawalAmount = getText(Stash_ReviewWithdrawalSelectors.txtAmountValue).substring(1);
 			String actualStashType = getText(Stash_ReviewWithdrawalSelectors.txtFromValue);
 			String actualToAccount = getText(Stash_ReviewWithdrawalSelectors.txtToValue);
-			softAssertion.assertEquals(withdrawalAmount, actualWithdrawalAmount);
-			softAssertion.assertEquals(stashType, actualStashType);
-			softAssertion.assertEquals(toAccount, actualToAccount);
+			softAssertion.assertEquals(actualWithdrawalAmount, withdrawalAmount);
+			softAssertion.assertEquals(actualStashType, stashType);
+			softAssertion.assertEquals(actualToAccount, toAccount);
 			softAssertion.assertAll();
-
-			click(Stash_ReviewWithdrawalSelectors.btnConfirm, "Confirm");
 			waitTime(2000);
+		}
+	}
+
+	/**
+	 * Click on Confirm button
+	 */
+	public void clickConfirm() throws Exception {
+		waitTime(2000);
+		if(this.verifyPageLoaded()) {
+			click(Stash_ReviewWithdrawalSelectors.btnConfirm, "Confirm");
 		}
 	}
 }

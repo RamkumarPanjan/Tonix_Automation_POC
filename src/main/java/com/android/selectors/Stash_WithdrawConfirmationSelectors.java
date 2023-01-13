@@ -10,4 +10,6 @@ public class Stash_WithdrawConfirmationSelectors {
 
 	public static By txtConfirmationMessage = By.xpath("//android.widget.TextView[contains(@text,'You moved') and contains(@text,'to your Tonik account')]");
 
+	public static By txtViewDetails = By.xpath("//android.widget.TextView[@text='View Details']");
+
 }
