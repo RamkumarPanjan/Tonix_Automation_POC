@@ -31,6 +31,7 @@ public class BaseTestCase {
     protected com.business.tonixPages.Stash_ConfirmTransferToStashPage stashConfirmTransferToStashPage;
     protected com.business.tonixPages.Stash_MoneyStashPage stashMoneyStashPage;
     protected com.business.tonixPages.Stash_StashDetailsPage stashDetailsPage;
+    protected com.business.tonixPages.Stash_CreatedStashPage createdStashPage;
 
     public static PropertyFileReader prop = new PropertyFileReader(".\\properties\\testdata.properties");
 
@@ -61,10 +62,11 @@ public class BaseTestCase {
         stashConfirmTransferToStashPage=new com.business.tonixPages.Stash_ConfirmTransferToStashPage();
         stashMoneyStashPage=new com.business.tonixPages.Stash_MoneyStashPage();
         stashDetailsPage=new com.business.tonixPages.Stash_StashDetailsPage();
+        createdStashPage=new com.business.tonixPages.Stash_CreatedStashPage();
     }
 
-    @AfterTest
+  /*  @AfterTest
     public void tonixAppQuit() throws Exception{
         basePage.TearDown();
-    }
+    }*/
 }
