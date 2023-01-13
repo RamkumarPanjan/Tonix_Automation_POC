@@ -44,9 +44,15 @@ public class MainPage extends BasePage {
      * Get the tonix account balance
      */
     public String getTonikAccounBalance() throws Exception {
-        String accountBalance = getText(MainSelectors.txtTonixAccountBalance);
-        accountBalance = accountBalance.replace("₱","").replace(",","");
-        return accountBalance;
+    	
+    	if(waitForElementToBePresent(MainSelectors.txtYourTonikAccount, 120,"Your Tonix Account text")) {
+            String accountBalance = getText(MainSelectors.txtTonixAccountBalance);
+            accountBalance = accountBalance.replace("₱","").replace(",","");
+            return accountBalance;   		
+    	} else {
+    		extent.extentLoggerFail("Your Tonix Account text", "Text 'Your Tonix Account' found in main page");
+    		return null;
+    	}
     }
 
     /**
@@ -55,14 +61,21 @@ public class MainPage extends BasePage {
     public void verifyTonikAccountBalance(String expectedBalance) throws Exception {
         extent.HeaderChildNode("Verify Tonix Account Balance");
         waitTime(2000);
-        String accountBalance = getText(MainSelectors.txtTonixAccountBalance);
-        accountBalance = accountBalance.replace("₱","").replace(",","");
-        if(accountBalance.endsWith(".0"))
-            accountBalance = accountBalance.replace(".0",".00");
-        if(accountBalance.equals(expectedBalance)) {
-            extent.extentLoggerPass("Tonix Account Balance", "Expected: "+accountBalance);
+        
+        if(waitForElementToBePresent(MainSelectors.txtYourTonikAccount, 120,"Your Tonix Account text")) {
+            String accountBalance = getText(MainSelectors.txtTonixAccountBalance);
+            accountBalance = accountBalance.replace("₱","").replace(",","");
+            if(expectedBalance.endsWith(".0"))
+            	expectedBalance = expectedBalance.replace(".0",".00");
+            if(accountBalance.equals(expectedBalance)) {
+                extent.extentLoggerPass("Tonix Account Balance", "Expected: "+accountBalance);
+            } else {
+                extent.extentLoggerFail("Tonix Account Balance", "Actual: "+accountBalance+", Expected:"+expectedBalance);
+            }        	
         } else {
-            extent.extentLoggerFail("Tonix Account Balance", "Actual: "+accountBalance+", Expected:"+expectedBalance);
+        	extent.extentLoggerFail("Your Tonix Account text", "Text 'Your Tonix Account' found in main page");
         }
+        
+
     }
 }
