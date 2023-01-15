@@ -36,18 +36,19 @@ public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
 		stashConfirmTransferToStashPage.confirmTransferToStash("₱750.00", prop.getproperty("mainAccount"),prop.getproperty("educationStash"),prop.getproperty("ownerStash"));
 		//stashMoneyStashPage.clickViewDetailsText();
         stashMoneyStashPage.moneyStashed();
+		ExtentReporter.jiraID = "TON-3";
 	}
 	
 	@Test(priority = 2)
 	public void modifyStashName() throws Exception {
         stashHomePage.clickManage();
-//        manageStashPage.clickStashDetails();
-//        stashDetailsPage.stashDetails("₱1,000.00");
         manageStashPage.clickModify();
         modifyStashPage.modifyStashName(prop.getproperty("educationStash"), "AB");
         modifyStashPage.verifyStashNameErrorMessage();
-        modifyStashPage.modifyStashName("AB", prop.getproperty("travellingStash"));
+		ExtentReporter.jiraID = "TON-15";
+		modifyStashPage.modifyStashName("AB", prop.getproperty("travellingStash"));
         updatedStashPage.verifyUpdatedStashConfirmationMessage();
+		ExtentReporter.jiraID = "TON-10";
     }	
 	
 	@Test(priority = 3)
@@ -56,8 +57,10 @@ public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
         manageStashPage.clickModify();
         modifyStashPage.modifyStashAmount("1,000.00", "900");
         modifyStashPage.verifyStashAmountErrorMessage();
+		ExtentReporter.jiraID = "TON-14";
         modifyStashPage.modifyStashAmount("900", "1500");
         updatedStashPage.verifyUpdatedStashConfirmationMessage();
+		ExtentReporter.jiraID = "TON-11";
     }		
 	
 	@Test(priority = 4)
@@ -68,6 +71,7 @@ public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
 		stashConfirmTransferToStashPage.confirmTransferToStash("₱750.00", prop.getproperty("mainAccount"),prop.getproperty("travellingStash"),prop.getproperty("ownerStash"));
 		//stashMoneyStashPage.clickViewDetailsText();
         stashMoneyStashPage.moneyStashed();
+		ExtentReporter.jiraID = "TON-3";
 	}	
 	
 	
@@ -80,12 +84,11 @@ public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
         withdrawFromYourStashPage.withDrawAmount("1,500.00","2000");
         withdrawFromYourStashPage.verifyNoEnoughBalanceMessage("1,500.00");
         withdrawFromYourStashPage.withDrawAmount("2,000","1500");
-        // ExtentReporter.jiraID = "TON-7";
-
- 	   reviewWithdrawPage.reviewWithdrawalInfo("1,500.00", prop.getproperty("travellingStash"), prop.getproperty("mainAccount"));
- 	   reviewWithdrawPage.clickConfirm();
- 	   withdrawConfirmationPage.verifyConfirmationMessage("₱1,500.00",prop.getproperty("travellingStash"));
- 	   withdrawConfirmationPage.clickOhYeahButton();
+ 	    reviewWithdrawPage.reviewWithdrawalInfo("1,500.00", prop.getproperty("travellingStash"), prop.getproperty("mainAccount"));
+ 	    reviewWithdrawPage.clickConfirm();
+ 	    withdrawConfirmationPage.verifyConfirmationMessage("₱1,500.00",prop.getproperty("travellingStash"));
+ 	    withdrawConfirmationPage.clickOhYeahButton();
+		ExtentReporter.jiraID = "TON-13";
     }	
 
 	@Test(priority = 6)
