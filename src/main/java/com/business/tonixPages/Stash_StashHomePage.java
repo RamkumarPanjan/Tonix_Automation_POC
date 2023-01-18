@@ -48,7 +48,7 @@ public class Stash_StashHomePage extends BasePage {
 	public void clickAddToStash() throws Exception 
 	{
 		extent.HeaderChildNode("Click on 'Add to stash' text");
-		waitTime(2000);
+		//waitTime(2000);
 		if(waitForElementToBePresent(Stash_StashHomeSelectors.txtAddToStash, 120, "'Add to Stash' text"))
 		{
 			click(Stash_StashHomeSelectors.txtAddToStash,"Click 'Add to Stash' text in stash page");
@@ -61,23 +61,6 @@ public class Stash_StashHomePage extends BasePage {
 			extent.extentLoggerFail("Add to Stash", "Not clicked on 'Add to stash' text in stash page");
 		}
 	}
-
-//	public void verifyStashAchieved() throws InterruptedException, Exception 
-//	{
-//		extent.HeaderChildNode("Verify 'Achieved' text");	
-//		waitTime(2000);
-//		if(waitForElementToBePresent(Stash_StashHomeSelectors.txtAchieved, 60, "'Achieved' text")) 
-//		{
-//			//verifyElementPresent(Stash_StashHomeSelectors.txtAchieved, "Verify 'Achieved' text in stash page");
-//			logger.info("Achieved");
-//			extent.extentLoggerPass("Achieved", "Verified 'Achieved' text in stash page");
-//		}
-//		else 
-//		{
-//			logger.info("Not achieved");
-//			extent.extentLoggerFail("Achieved", "Not verified 'Achieved' text in stash page");
-//		}
-//	}
 	
 	public void verifyStashAchieved(String achievedAmount, String targetAmount) throws InterruptedException, Exception {
 	        extent.HeaderChildNode("Verify 'Achieved' text");	
@@ -110,15 +93,15 @@ public class Stash_StashHomePage extends BasePage {
 		System.out.println("actualMessage: "+actualMessage);
 	}
 
-	/*public void clickEducationStash() throws Exception
+	public void clickStash() throws Exception
 
 	{
 		waitTime(2000);
 		extent.HeaderChildNode("Click on 'Education' text");
 
-		if(verifyElementPresent(Stash_StashHomeSelectors.txtEducation, "Education text"))
+		if(verifyElementPresent(Stash_StashHomeSelectors.txtStash, "Education text"))
 		{
-			click(Stash_StashHomeSelectors.txtEducation, "Education text");
+			click(Stash_StashHomeSelectors.txtStash, "Education text");
 			extent.extentLoggerPass("Education text", "Clicked on 'Education' text in stash main page");
 		}
 		else
@@ -126,7 +109,6 @@ public class Stash_StashHomePage extends BasePage {
 			extent.extentLoggerFail("Education text not clicked", "Unable to click on 'Education' text in stash home page");
 		}  
 	}
-*/
 
 	public void clickOnCreatedStash() throws Exception {
 		waitTime(6000);

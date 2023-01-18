@@ -119,6 +119,21 @@ public class BasePage extends Utilities {
 		instant.toString();
 		return formattedDate;
 	}
+	
+	public  String dateComparisonWithoutTimeAndFutureDates(int months) {
+        LocalDateTime myDateObj = LocalDateTime.now(ZoneId.of("UTC+08:00")).plusMonths(months);
+        System.out.println("Before formatting: " + myDateObj);
+        DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd MMM YYYY");
+        //Calendar cal = Calendar.getInstance();
+       //cal.add(Calendar.MONTH, months);
+        formattedDate= myDateObj.format(myFormatObj);
+        System.out.println("After formatting: " + formattedDate);
+        ZoneId zone = ZoneId.of("UTC+08:00");
+        ZonedDateTime zdt = myDateObj.atZone(zone);
+        Instant instant = zdt.toInstant();
+        instant.toString();
+        return formattedDate;
+    }
 
 	public void moveToPreviousPage(int count) {
 		Back(count);

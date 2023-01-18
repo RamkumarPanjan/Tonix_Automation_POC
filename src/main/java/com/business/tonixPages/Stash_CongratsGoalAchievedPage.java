@@ -15,7 +15,7 @@ public class Stash_CongratsGoalAchievedPage extends BasePage
 	     *
 	     */
 
-	    public void verifyCongratsGoalAchieved(String targetAmount, String stashBalance, String startingDate, String interestRate, String withholdingTax) throws Exception 
+	    public void verifyCongratsGoalAchieved(String targetAmount, String stashBalance, String interestRate, String withholdingTax) throws Exception 
 	    {
 	        extent.HeaderChildNode("Confirm transfer to stash");
 	        
@@ -28,6 +28,7 @@ public class Stash_CongratsGoalAchievedPage extends BasePage
 	        {
 		        String actualtargetAmount = getText(Stash_CongratsGoalAchievedSelectors.txtTargetAmount);
 				String actualstashBalance = getText(Stash_CongratsGoalAchievedSelectors.txtStashBalance);
+				dateComparisonWithoutTime();
 				String actualstartingDate = getText(Stash_CongratsGoalAchievedSelectors.txtStartingDate);
 				String actualinterestRate = getText(Stash_CongratsGoalAchievedSelectors.txtInterestRate);
 				String actualwithholdingTax = getText(Stash_CongratsGoalAchievedSelectors.txtWithholdingTax);
@@ -36,7 +37,7 @@ public class Stash_CongratsGoalAchievedPage extends BasePage
 				System.out.println(actualtargetAmount);
 				softAssertion.assertEquals(stashBalance, actualstashBalance);
 				System.out.println(actualstashBalance);
-				softAssertion.assertEquals(startingDate, actualstartingDate);
+				softAssertion.assertEquals(formattedDate, actualstartingDate);
 				System.out.println(actualstartingDate);
 				softAssertion.assertEquals(interestRate, actualinterestRate);
 				System.out.println(actualinterestRate);

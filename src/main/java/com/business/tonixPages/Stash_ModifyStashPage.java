@@ -167,4 +167,24 @@ public class Stash_ModifyStashPage extends BasePage {
 		modifyStashAmount(stashAmount, stashNewamountWithThreeDigits);
 		modifyStashAmount(stashNewamountWithThreeDigits, stashNewAmount);
 	}
+	
+	public void verifyStashNameStashAmount(String stashName, String stashAmount) throws Exception {
+		
+		extent.HeaderChildNode("Modify Existing Stash Name and Stash Amount");
+		if(this.verifyPageLoaded()) {
+		String stashName_before = getText(Stash_ModifyStashSelectors.edittxtStashFor);
+		System.out.println(stashName_before);
+		softAssertion.assertEquals(stashName, stashName_before);
+		softAssertion.assertAll();
+		
+		String stashAmount_before = getText(Stash_ModifyStashSelectors.edittxtTargetamount);
+		System.out.println(stashAmount_before);
+		softAssertion.assertEquals(stashAmount, stashAmount_before);
+		softAssertion.assertAll();
+		waitForElementToBePresent(Stash_ModifyStashSelectors.btnSave,60, "Save button");
+		extent.extentLoggerPass("Page loaded ('Modify Stash')", "'Modify Stash' page loaded successfully");
+		} else {
+			extent.extentLoggerFail("Save button ('Modify Stash')", "Unable to click on 'Save' button");
+		}
+	}
 }

@@ -31,6 +31,7 @@ public class Stash_YouBrokeTheStashPage extends BasePage {
 	
 	public void clickLater() throws InterruptedException, Exception
 	   {
+		   
 		    if(this.verifyPageLoaded()) {
 	    	waitForElementToBePresent(Stash_YouBrokeTheStashSelectors.txtLater, 60, "Money stashed text");
 	        click(Stash_YouBrokeTheStashSelectors.txtLater, "Click Done");

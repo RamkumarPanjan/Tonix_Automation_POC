@@ -86,7 +86,7 @@ public class Stash_MoneyStashPage extends BasePage
 		waitTime(2000);
 		if(waitForElementToBePresent(Stash_MoneyStashSelectors.txtTransactionDetails, 60,"Transcation Details text"))
 		{
-			extent.extentLoggerPass("Page loaded ('Transcation Details                                                            ')", "'Transcation Details' page loaded successfully");
+			extent.extentLoggerPass("Page loaded ('Transcation Details')", "'Transcation Details' page loaded successfully");
 			return true;
 		}
 		else
