@@ -51,6 +51,7 @@ public class Stash_WithdrawFromYourStashPage extends BasePage {
 			}
 
 			click(Stash_WithdrawFromYourStashSelectors.edtWithDrawableAmount, "Withdraw amount edit field");
+			clearField(Stash_WithdrawFromYourStashSelectors.edtWithDrawableAmount, "Withdraw amount edit field");
 			hideKeyboard();
 			type(Stash_WithdrawFromYourStashSelectors.edtWithDrawableAmount  , amount, "Withdraw amount");
 			waitTime(2000);

@@ -1,11 +1,5 @@
 package com.business.tonixPages;
 
-import java.time.Instant;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.time.format.DateTimeFormatter;
-
 import com.android.selectors.Stash_StashDetailsSelectors;
 
 public class Stash_StashDetailsPage extends BasePage
@@ -51,22 +45,8 @@ public class Stash_StashDetailsPage extends BasePage
 		String actualTargetAmount = getText(Stash_StashDetailsSelectors.txtTargetAmount);
 		System.out.println("Target Amount -->"+actualTargetAmount);
 		softAssertion.assertEquals(targetAmount, actualTargetAmount);
-		Back(1);
+		moveToPreviousPage(1);
 		softAssertion.assertAll();
 	}
-	//Utility Method for getting current Date 
-	public String formattedDate =null;
-	public  String dateComparison() {
-		LocalDateTime myDateObj = LocalDateTime.now(ZoneId.of("UTC+08:00"));
-		System.out.println("Before formatting: " + myDateObj);
-		DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd MMM YYYY");
-		formattedDate= myDateObj.format(myFormatObj);
-		System.out.println("After formatting: " + formattedDate);
-		ZoneId zone = ZoneId.of("UTC+08:00");
-		ZonedDateTime zdt = myDateObj.atZone(zone);
-		Instant instant = zdt.toInstant();
-		instant.toString();
-		return formattedDate;
-	}
-
+	
 }

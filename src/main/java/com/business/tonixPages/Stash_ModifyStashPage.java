@@ -7,7 +7,6 @@ public class Stash_ModifyStashPage extends BasePage {
 	public Stash_ModifyStashPage() throws InterruptedException {
 		super();
 	}
-
 	/**
 	 *  Function verify if 'Modify Stash' page is loaded successfully
 	 */

@@ -1,7 +1,4 @@
 package com.business.tonixPages;
-import java.util.List;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 import com.android.selectors.Stash_StashHomeSelectors;
 
@@ -48,7 +45,7 @@ public class Stash_StashHomePage extends BasePage {
 	public void clickAddToStash() throws Exception 
 	{
 		extent.HeaderChildNode("Click on 'Add to stash' text");
-		//waitTime(2000);
+		waitTime(2000);
 		if(waitForElementToBePresent(Stash_StashHomeSelectors.txtAddToStash, 120, "'Add to Stash' text"))
 		{
 			click(Stash_StashHomeSelectors.txtAddToStash,"Click 'Add to Stash' text in stash page");
@@ -61,26 +58,45 @@ public class Stash_StashHomePage extends BasePage {
 			extent.extentLoggerFail("Add to Stash", "Not clicked on 'Add to stash' text in stash page");
 		}
 	}
-	
+
+	//	public void verifyStashAchieved() throws InterruptedException, Exception 
+	//	{
+	//		extent.HeaderChildNode("Verify 'Achieved' text");	
+	//		waitTime(2000);
+	//		if(waitForElementToBePresent(Stash_StashHomeSelectors.txtAchieved, 60, "'Achieved' text")) 
+	//		{
+	//			//verifyElementPresent(Stash_StashHomeSelectors.txtAchieved, "Verify 'Achieved' text in stash page");
+	//			logger.info("Achieved");
+	//			extent.extentLoggerPass("Achieved", "Verified 'Achieved' text in stash page");
+	//		}
+	//		else 
+	//		{
+	//			logger.info("Not achieved");
+	//			extent.extentLoggerFail("Achieved", "Not verified 'Achieved' text in stash page");
+	//		}
+	//	}
+
 	public void verifyStashAchieved(String achievedAmount, String targetAmount) throws InterruptedException, Exception {
-	        extent.HeaderChildNode("Verify 'Achieved' text");	
-	    	waitTime(2000);
-	    	if(waitForElementToBePresent(Stash_StashHomeSelectors.txtStash, 60, "'Achieved' text"))
-	    	{
-		    	String actualMessage = getText(Stash_StashHomeSelectors.txtAchieved);
-		    	String result = actualMessage.replaceAll("\\s+", " ");
-				String expectedMessage = "Achieved "+achievedAmount+" of "+targetAmount;
-				softAssertion.assertEquals(result, expectedMessage);
-				softAssertion.assertAll();
-				
-		        logger.info("Achieved");
-		        extent.extentLoggerPass("Achieved", "Verified 'Achieved' text in stash page");
-	        }
-	        else 
-	        {
-	            logger.info("Not achieved");
-	            extent.extentLoggerFail("Achieved", "Not verified 'Achieved' text in stash page");
-	        }
+		extent.HeaderChildNode("Verify 'Achieved' text");	
+		waitTime(2000);
+		if(waitForElementToBePresent(Stash_StashHomeSelectors.txtStash, 60, "'Achieved' text"))
+		{
+			String actualMessage = getText(Stash_StashHomeSelectors.txtAchieved);
+
+			String result = actualMessage.replaceAll("\\s+", " ");
+			System.out.println(actualMessage);
+			String expectedMessage = "Achieved "+achievedAmount+" of "+targetAmount;
+			softAssertion.assertEquals(result, expectedMessage);
+			softAssertion.assertAll();
+
+			logger.info("Achieved");
+			extent.extentLoggerPass("Achieved", "Verified 'Achieved' text in stash page");
+		}
+		else 
+		{
+			logger.info("Not achieved");
+			extent.extentLoggerFail("Achieved", "Not verified 'Achieved' text in stash page");
+		}
 	}
 
 	public void verifyGoalAchieved() throws Exception
@@ -89,16 +105,16 @@ public class Stash_StashHomePage extends BasePage {
 		String actualMessage = getText(Stash_StashHomeSelectors.txtgoalachieved);
 		String expectedMessage = "Congrats! Goal achieved!";
 		softAssertion.assertEquals(actualMessage, expectedMessage);
+		//int color = getColour(Stash_StashHomeSelectors.txtslideBar);
+		//System.out.println("slide bar green color "+color);
 		softAssertion.assertAll();
 		System.out.println("actualMessage: "+actualMessage);
 	}
 
 	public void clickStash() throws Exception
-
 	{
 		waitTime(2000);
 		extent.HeaderChildNode("Click on 'Education' text");
-
 		if(verifyElementPresent(Stash_StashHomeSelectors.txtStash, "Education text"))
 		{
 			click(Stash_StashHomeSelectors.txtStash, "Education text");
@@ -110,12 +126,12 @@ public class Stash_StashHomePage extends BasePage {
 		}  
 	}
 
+
 	public void clickOnCreatedStash() throws Exception {
 		waitTime(6000);
 		if(verifyElementPresent(Stash_StashHomeSelectors.txtStartNewStash, "stashes text"))
 		{
 			waitTime(4000);
-			getAllWebElements();
 			String actualAchieved = getText(Stash_StashHomeSelectors.txtAchieved);
 			System.out.println(actualAchieved);
 			click(Stash_StashHomeSelectors.txtStash, "Stash name Box");
@@ -123,30 +139,46 @@ public class Stash_StashHomePage extends BasePage {
 		}
 	}
 
-	public void getAllWebElements() throws Exception
-	{
-		if(verifyElementPresent(Stash_StashHomeSelectors.txtStash, "Stash")) {
-			List<WebElement> list = getDriver().findElements(Stash_StashHomeSelectors.txtStash);
-			for(WebElement wb : list) {
-				String txt = wb.getText();
-				System.out.println(txt);
-			}
+	public void getStashName(String stashName) throws Exception {
+
+		if(verifyElementPresent(Stash_StashHomeSelectors.txtStartNewStash, "stashes text"))
+		{
+			verifyElementPresent(Stash_StashHomeSelectors.txtStash, "Stash");
+			String actualstashName = getText(Stash_StashHomeSelectors.txtStash);
+			System.out.println("Stash Name ---> "+actualstashName);
+			softAssertion.assertEquals(actualstashName, stashName);
+			softAssertion.assertAll();
+			verifyElementPresent(Stash_StashHomeSelectors.txtAchieved, "Achieved text and amount");
+			String stashAchievedAmount = getText(Stash_StashHomeSelectors.txtAchieved);
+			System.out.println(stashName+"----->"+stashAchievedAmount);
 		}
-		Swipe("up", 1);
-		if(verifyElementPresent(Stash_StashHomeSelectors.txtStash, "Stash")) {
-			List<WebElement> lis = getDriver().findElements(Stash_StashHomeSelectors.txtStash);
-			for(WebElement wb : lis) {
-				String txt = wb.getText();
-				System.out.println(txt);
-			}
+	}
+	/**
+	 * Verify Alert prompt if already Five stashes present
+	 * Checking if Five stashes present are displayed
+	 * Checking stash achieved and goal achieved validations are displayed
+	 */
+	public void verifyAlertPromptIfFiveStashesPresent() throws Exception {
+		extent.HeaderChildNode("verifying Alert prompt if already Five stashes present");
+		waitTime(2000);
+
+		if(verifyElementPresent(Stash_StashHomeSelectors.txtZerooOfFiveAvailablestatshes, "zero of Five stashes text"))
+		{
+			clickStartANewStash();
+			logger.info("Alert Pop-up is displayed");
+			String actualAlertMessage = getText(Stash_StashHomeSelectors.txtYouCanCreateOnlyFiveStashes);
+			System.out.println(actualAlertMessage);
+			String AlertPopupMessage = "Sorry, you can only have 5 actived Stashes created by yourself at the same time. You can close a Stash and create a new one.";
+			softAssertion.assertEquals(actualAlertMessage, AlertPopupMessage);
+			softAssertion.assertAll();
+			waitTime(2000);
+			click(Stash_StashHomeSelectors.btnOk, "Done button");
+			extent.extentLoggerPass("Alert prompt Pop-up is displayed", "Verified 'Alert Message' text in pop-up  page");
 		}
-		Swipe("up", 2);
-		if(verifyElementPresent(Stash_StashHomeSelectors.txtStash, "Stash")) {
-			List<WebElement> lis = getDriver().findElements(Stash_StashHomeSelectors.txtStash);
-			for(WebElement wb : lis) {
-				String txt = wb.getText();
-				System.out.println(txt);
-			}
+		else 
+		{
+			logger.info("Not achieved");
+			extent.extentLoggerFail("Alert prompt Pop-up is not displayed", "Not verified 'Alert Message' text in pop-up page");
 		}
 	}
 }

@@ -86,7 +86,7 @@ public class TonixTestFlow_SoloStash_AddStash_BackToStash_LeaveItAsIs_CloseLater
 		basePage.moveToPreviousPage(2);
 		String newBalance = Utilities.addTwoAmount(tonikAccountBalance, "1000.00");
 		mainPage.verifyTonikAccountBalance(newBalance);
-		//ExtentReporter.jiraID = "TON-10";
+		//ExtentReporter.jiraID = "TON-16";
     
 	}
 }

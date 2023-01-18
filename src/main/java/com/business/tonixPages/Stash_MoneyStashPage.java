@@ -113,8 +113,7 @@ public class Stash_MoneyStashPage extends BasePage
 		softAssertion.assertEquals(stashName, actualToStashName);
 		softAssertion.assertEquals(fromAccount, actualFromAccount);
 		softAssertion.assertEquals(formattedDate, actualWhentime);
-		Back(1);
-
+		moveToPreviousPage(1);
 		softAssertion.assertAll();  	
 	}
 }

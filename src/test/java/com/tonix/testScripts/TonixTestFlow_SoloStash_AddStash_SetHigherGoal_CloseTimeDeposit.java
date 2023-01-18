@@ -4,9 +4,8 @@ import org.testng.annotations.Test;
 import com.extent.ExtentReporter;
 import com.utility.Utilities;
 
-public class TonixTestFlow_SoloStash_AddStash_SetHigherGoal_CloseTimeDeposit extends BaseTestCase {
-
-
+public class TonixTestFlow_SoloStash_AddStash_SetHigherGoal_CloseTimeDeposit extends BaseTestCase 
+{
 	@Test(priority = 0)
     public void createStash() throws Exception {
 		//welcomePage.RingPayAppLaunch();
@@ -83,7 +82,7 @@ public class TonixTestFlow_SoloStash_AddStash_SetHigherGoal_CloseTimeDeposit ext
 	stashWootWootPage.closePopupDoItLater();
 	stashWootWootPage.verifyTimeDepositCreatedMessage();
 	//stashHowMuchWillYouInvestPage.verifyConfirmationMessage(prop.getproperty("Email"));
-	//ExtentReporter.jiraID = "TON-10";
+	//ExtentReporter.jiraID = "TON-17";
     
 	}
 }
