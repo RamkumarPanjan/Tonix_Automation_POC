@@ -35,7 +35,7 @@ public class Stash_AddToStashPage extends BasePage {
 	        else
 	        {
 	            logger.info("Not added to stash");
-	            extent.extentLoggerFail("Add to Stash", "Not clicked on 'Add to stash' text in add to stash page");
+	            extent.extentLoggerFail("Not added to Stash", "Not clicked on 'Add to stash' text in add to stash page");
 	        }
 	    }
 	}

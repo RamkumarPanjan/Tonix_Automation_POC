@@ -17,14 +17,14 @@ public class Stash_YouBrokeTheStashPage extends BasePage {
 	   {
 		
 		waitTime(2000);
-		if(waitForElementToBePresent(Stash_YouBrokeTheStashSelectors.txtYouBrokeTheStash, 60,"Withdrawal Confirmation text"))
+		if(waitForElementToBePresent(Stash_YouBrokeTheStashSelectors.txtYouBrokeTheStash, 60,"You broke the stash text"))
 		{
-			extent.extentLoggerPass("Page loaded ('Modify Stash')", "'Modify Stash' page loaded successfully");
+			extent.extentLoggerPass("Page loaded ('You broke the stash')", "'You broke the stash' page loaded successfully");
 			return true;
 		}
 		else
 		{
-			extent.extentLoggerFail("Page not loaded ('Modify Stash')", "'Modify Stash' page not loaded successfully");
+			extent.extentLoggerFail("Page not loaded ('You broke the stash')", "'You broke the stash' page not loaded successfully");
 			return false;
 		}
 	}
@@ -33,15 +33,15 @@ public class Stash_YouBrokeTheStashPage extends BasePage {
 	   {
 		   
 		    if(this.verifyPageLoaded()) {
-	    	waitForElementToBePresent(Stash_YouBrokeTheStashSelectors.txtLater, 60, "Money stashed text");
-	        click(Stash_YouBrokeTheStashSelectors.txtLater, "Click Done");
-	        logger.info("Confirming money stashed");
-	        extent.extentLoggerPass("Confirm money stashed", "Clicked on 'Done' button in money stashed page");
+	    	waitForElementToBePresent(Stash_YouBrokeTheStashSelectors.txtLater, 60, "Click later text");
+	        click(Stash_YouBrokeTheStashSelectors.txtLater, "Click Click later");
+	        logger.info("Click later");
+	        extent.extentLoggerPass("Click later", "Clicked on 'Click later' text");
 	        }
 	        else 
 	        {
-	        	logger.info("Money not stashed");
-	            extent.extentLoggerFail("Confirm money stashed", "Not clicked on 'Done' button in money stashed page");
+	        	logger.info("Click later not displayed");
+	            extent.extentLoggerFail("Click later", "Not clicked on 'Click later' text");
 	        
 	    }	  
 	   }
@@ -50,15 +50,15 @@ public class Stash_YouBrokeTheStashPage extends BasePage {
 		
 		    Thread.sleep(9000);
 	        if(this.verifyPageLoaded()) {
-	    	waitForElementToBePresent(Stash_YouBrokeTheStashSelectors.btnStartTimeDeposit, 60, "Money stashed text");
-	        click(Stash_YouBrokeTheStashSelectors.btnStartTimeDeposit, "Click Done");
-	        logger.info("Confirming money stashed");
-	        extent.extentLoggerPass("Confirm money stashed", "Clicked on 'Done' button in money stashed page");
+	    	waitForElementToBePresent(Stash_YouBrokeTheStashSelectors.btnStartTimeDeposit, 60, "start time deposit");
+	        click(Stash_YouBrokeTheStashSelectors.btnStartTimeDeposit, "Click start time deposit");
+	        logger.info("Clicked on Start time deposit");
+	        extent.extentLoggerPass("start time deposit", "Clicked on 'start time deposit' text");
 	        }
 	        else 
 	        {
-	        	logger.info("Money not stashed");
-	            extent.extentLoggerFail("Confirm money stashed", "Not clicked on 'Done' button in money stashed page");
+	        	logger.info("Did not click on start time deposit");
+	            extent.extentLoggerFail("start time deposit", "Not clicked on 'start time deposit' text");
 	        
 	    }	  
 	   }

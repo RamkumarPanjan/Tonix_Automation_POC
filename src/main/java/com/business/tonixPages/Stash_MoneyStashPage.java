@@ -44,7 +44,7 @@ public class Stash_MoneyStashPage extends BasePage
 		else 
 		{
 			logger.info("Money not stashed");
-			extent.extentLoggerFail("Confirm money stashed", "Not clicked on 'Done' button in money stashed page");
+			extent.extentLoggerFail("Money not stashed", "Not clicked on 'Done' button in money stashed page");
 
 		}
 

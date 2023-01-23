@@ -17,19 +17,19 @@ public class Stash_HowMuchWillYouInvestPage extends BasePage {
 
 	public void verifyHowMuchWillYouInvest() throws InterruptedException, Exception
 	   {    
-		    Thread.sleep(12000);
-	    	if(waitForElementToBePresent(Stash_HowMuchWillYouInvestSelectors.txtHowMuchWillYouInvest, 60, "Money stashed text"))
+		    Thread.sleep(20000);
+	    	if(waitForElementToBePresent(Stash_HowMuchWillYouInvestSelectors.txtHowMuchWillYouInvest, 60, "How much will you invest text"))
 	        {
 	         
-	            click(Stash_HowMuchWillYouInvestSelectors.btnIAmInterested, "Click Done");
+	            click(Stash_HowMuchWillYouInvestSelectors.btnIAmInterested, "Click button I am interested");
 	            Thread.sleep(10000);
-	            logger.info("Confirming money stashed");
-	            extent.extentLoggerPass("Confirm money stashed", "Clicked on 'Done' button in money stashed page");
+	            logger.info("Clicked on button I am interested");
+	            extent.extentLoggerPass("I am interested", "Clicked 'button I am interested'");
 	        }
 	        else 
 	        {
-	        	logger.info("Money not stashed");
-	            extent.extentLoggerFail("Confirm money stashed", "Not clicked on 'Done' button in money stashed page");
+	        	logger.info("Did not click on button I am interested");
+	            extent.extentLoggerFail("I am interested", "Not clicked 'button I am interested'");
 	        
 	    }	
 	   }	

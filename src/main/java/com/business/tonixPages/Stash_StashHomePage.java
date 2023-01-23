@@ -55,7 +55,7 @@ public class Stash_StashHomePage extends BasePage {
 		else 
 		{
 			logger.info("Not added to stash");
-			extent.extentLoggerFail("Add to Stash", "Not clicked on 'Add to stash' text in stash page");
+			extent.extentLoggerFail("Not added to Stash", "Not clicked on 'Add to stash' text in stash page");
 		}
 	}
 
@@ -95,7 +95,7 @@ public class Stash_StashHomePage extends BasePage {
 		else 
 		{
 			logger.info("Not achieved");
-			extent.extentLoggerFail("Achieved", "Not verified 'Achieved' text in stash page");
+			extent.extentLoggerFail("Not Achieved", "Not displayed 'Achieved' text in stash page");
 		}
 	}
 
@@ -114,15 +114,15 @@ public class Stash_StashHomePage extends BasePage {
 	public void clickStash() throws Exception
 	{
 		waitTime(2000);
-		extent.HeaderChildNode("Click on 'Education' text");
-		if(verifyElementPresent(Stash_StashHomeSelectors.txtStash, "Education text"))
+		extent.HeaderChildNode("Click on 'Stash' text");
+		if(verifyElementPresent(Stash_StashHomeSelectors.txtStash, "Stash text"))
 		{
-			click(Stash_StashHomeSelectors.txtStash, "Education text");
-			extent.extentLoggerPass("Education text", "Clicked on 'Education' text in stash main page");
+			click(Stash_StashHomeSelectors.txtStash, "Stash text");
+			extent.extentLoggerPass("Stash text ", "Clicked on 'Stash' text in stash main page");
 		}
 		else
 		{
-			extent.extentLoggerFail("Education text not clicked", "Unable to click on 'Education' text in stash home page");
+			extent.extentLoggerFail("Stash text not present", "Not clicked on 'stash' text in stash home page");
 		}  
 	}
 

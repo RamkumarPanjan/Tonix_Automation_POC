@@ -11,7 +11,7 @@ public class Stash_SetUpTimeDepositPage extends BasePage{
 
 	public void verifySetUpTimeDeposit(String investmentAmount, String termTimeDeposit, String nicknameTimeDeposit, String interestRateTimeDeposit, String interestEarnedAtMaturity, String payoutAtMaturity, String earlyWithdrawal) throws Exception {
 		
-		if(waitForElementToBePresent(Stash_SetUpTimeDepositSelectors.txtSetUpTimeDeposit,60, "Confirm transfer to stash text"))
+		if(waitForElementToBePresent(Stash_SetUpTimeDepositSelectors.txtSetUpTimeDeposit,60, "Set up time deposit text"))
         {
 	        String actualinvestmentAmount = getText(Stash_SetUpTimeDepositSelectors.txtInvestmentAmount);
 	        System.out.println(actualinvestmentAmount);
@@ -51,16 +51,16 @@ public class Stash_SetUpTimeDepositPage extends BasePage{
 			softAssertion.assertAll();
 			Swipe("up", 1);
 			
-	        waitForElementAndClickIfPresent(Stash_SetUpTimeDepositSelectors.btnTermsAndConditions, 20,"Click confirm transfer to stash");
-	        waitForElementAndClickIfPresent(Stash_SetUpTimeDepositSelectors.btnLetUsOpenThisTimeDeposit, 20,"Click confirm transfer to stash");
+	        waitForElementAndClickIfPresent(Stash_SetUpTimeDepositSelectors.btnTermsAndConditions, 20,"Click terms and condition");
+	        waitForElementAndClickIfPresent(Stash_SetUpTimeDepositSelectors.btnLetUsOpenThisTimeDeposit, 20,"Click let us open this time deposit");
 	        
-	        logger.info("Confirming transfer to stash");
-	        extent.extentLoggerPass("Confirming transfer to stash", "Clicked on 'Confirm' in confirm transfer to stash page");
+	        logger.info("Clicked on let us open this time deposit");
+	        extent.extentLoggerPass("Let us open this time deposit", "Clicked 'Let us open this time deposit'");
         }
         else 
         {
-        	logger.info("Not transferred to stash");
-            extent.extentLoggerFail("Confirming transfer to stash", "Not clicked on 'Confirm' in confirm transfer to stash page");
+        	logger.info("Did not click on let us open this time deposit");
+            extent.extentLoggerFail("Let us open this time deposit", "Not clicked 'Let us open this time deposit'");
         
         }
 

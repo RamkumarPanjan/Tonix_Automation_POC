@@ -39,13 +39,13 @@ public class Stash_ConfirmTransferToStashPage extends BasePage
 				
 		        //if(ifElementPresent(Stash_ConfirmTransferToStashSelectors.btnConfirm, "Confirm transfer to stash")) {
 		        waitForElementAndClickIfPresent(Stash_ConfirmTransferToStashSelectors.btnConfirm, 20,"Click confirm transfer to stash");
-		        logger.info("Confirming transfer to stash");
-		        extent.extentLoggerPass("Confirming transfer to stash", "Clicked on 'Confirm' in confirm transfer to stash page");
+		        logger.info("Clicked on confirm transfer to stash");
+		        extent.extentLoggerPass("Confirm", "Clicked on 'Confirm' in confirm transfer to stash page");
 	        }
 	        else 
 	        {
-	        	logger.info("Not transferred to stash");
-	            extent.extentLoggerFail("Confirming transfer to stash", "Not clicked on 'Confirm' in confirm transfer to stash page");
+	        	logger.info("Not clicked on confirm transfer to stash");
+	            extent.extentLoggerFail("Confirm", "Not clicked on 'Confirm' in confirm transfer to stash page");
 	        
 	        }
          }

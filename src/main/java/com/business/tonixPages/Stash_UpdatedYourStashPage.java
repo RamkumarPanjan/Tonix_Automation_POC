@@ -14,7 +14,7 @@ public class Stash_UpdatedYourStashPage extends BasePage {
 
 	public void verifyUpdatedStashConfirmationMessage() throws Exception {
 		extent.HeaderChildNode("You Updated Your Stash page");
-		logger.info("After Modifying Stash Details Updated Stash Successfully Page ");
+		logger.info("You Updated Your Stash page");
 		waitTime(2000);
 
 		if(waitForElementToBePresent(Stash_UpdateYourStashSelectors.txtYourUpdatedYourStash,120,"You updated your stash text")) {
@@ -24,13 +24,13 @@ public class Stash_UpdatedYourStashPage extends BasePage {
 			softAssertion.assertAll();
 			if(verifyElementPresent(Stash_UpdateYourStashSelectors.btnDone, "Done button is displayed")) {
 				click(Stash_UpdateYourStashSelectors.btnDone, "Done button");
-				extent.extentLoggerPass("You Updated Your Stash", "Clicked on You Updated Your Stash in Updated stash  page");
+				extent.extentLoggerPass("Done", "Clicked on Done in Updated stash  page");
 			}
 			else {
-				extent.extentLoggerFail("You Updated Your Stash", "Unable to click on Done button in Updated stash  page");
+				extent.extentLoggerFail("Done", "Did not click on Done button in Updated stash  page");
 			}
 		} else {
-			extent.extentLoggerFail("You Updated Your Stash page", "Page not loaded successfully: 'You Updated Your Stash'");
+			extent.extentLoggerFail("You Updated Your Stash page", "Page not loaded successfully: 'You Updated Your Stash page'");
 		}
 	}
 }
