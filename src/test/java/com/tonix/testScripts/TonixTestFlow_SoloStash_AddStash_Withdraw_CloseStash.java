@@ -56,12 +56,16 @@ public class TonixTestFlow_SoloStash_AddStash_Withdraw_CloseStash extends BaseTe
 		stashMoneyStashPage.clickViewDetailsText();
 		stashMoneyStashPage.moneyStashed();
 		stashHomePage.verifyStashAchieved("₱1,000.00", "₱1,000.00");
+		stashHomePage.moveToPreviousPage(1);
+	    tonikAccountBalance = Utilities.subtractTwoAmount(tonikAccountBalance, "1000.00");
+	    System.out.println(tonikAccountBalance);
 		ExtentReporter.jiraID = "TON-3";
 	}
 
 
 	@Test(priority = 3)
 	public void verifyGoalAchieved() throws Exception {
+		mainPage.clickTotalStashBalance();
 		stashHomePage.verifyGoalAchieved();
 		ExtentReporter.jiraID = "TON-9";
 	}
@@ -84,7 +88,8 @@ public class TonixTestFlow_SoloStash_AddStash_Withdraw_CloseStash extends BaseTe
 		stashHomePage.verifyStashAchieved("₱0.00", "₱1,000.00");
 		stashHomePage.moveToPreviousPage(1);
 		String newBalance = Utilities.addTwoAmount(tonikAccountBalance, "1000.00");
-		mainPage.verifyTonikAccountBalance(tonikAccountBalance);
+		System.out.println(newBalance);
+		mainPage.verifyTonikAccountBalance(newBalance);
 		mainPage.clickTotalStashBalance();
 		ExtentReporter.jiraID = "TON-7";
 	}	

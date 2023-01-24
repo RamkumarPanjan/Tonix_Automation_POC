@@ -36,7 +36,7 @@ public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
 		stashConfirmTransferToStashPage.confirmTransferToStash("₱750.00", prop.getproperty("mainAccount"),prop.getproperty("educationStash"),prop.getproperty("ownerStash"));
 		//stashMoneyStashPage.clickViewDetailsText();
 		stashMoneyStashPage.moneyStashed();
-		//	ExtentReporter.jiraID = "TON-3";
+		ExtentReporter.jiraID = "TON-3";
 	}
 
 	@Test(priority = 2)
@@ -75,6 +75,9 @@ public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
 		stashConfirmTransferToStashPage.confirmTransferToStash("₱750.00", prop.getproperty("mainAccount"),prop.getproperty("travellingStash"),prop.getproperty("ownerStash"));
 		//stashMoneyStashPage.clickViewDetailsText();
 		stashMoneyStashPage.moneyStashed();
+		stashHomePage.moveToPreviousPage(1);
+	    tonikAccountBalance = Utilities.subtractTwoAmount(tonikAccountBalance, "1500.00");
+	    System.out.println(tonikAccountBalance);
 		//	ExtentReporter.jiraID = "TON-3";
 	}	
 
@@ -95,8 +98,9 @@ public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
 		stashHomePage.getStashName(prop.getproperty("travellingStash"));
 		stashHomePage.verifyStashAchieved("₱0.00", "₱1,500.00");
 		basePage.moveToPreviousPage(1);
-		String newBalance = Utilities.addTwoAmount(tonikAccountBalance, "1000.00");
-		mainPage.verifyTonikAccountBalance(tonikAccountBalance);
+		String newBalance = Utilities.addTwoAmount(tonikAccountBalance, "1500.00");
+		System.out.println(newBalance);
+		mainPage.verifyTonikAccountBalance(newBalance);
 		mainPage.clickTotalStashBalance();
 
 		//ExtentReporter.jiraID = "TON-13";
@@ -107,7 +111,7 @@ public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
 		stashHomePage.clickManage();
 		manageStashPage.clickStashDetails();
 		stashDetailsPage.stashDetails("₱1,500.00");
-		basePage.moveToPreviousPage(2);
+		basePage.moveToPreviousPage(1);
 	//	ExtentReporter.jiraID = "TON-12";
 
 	}
