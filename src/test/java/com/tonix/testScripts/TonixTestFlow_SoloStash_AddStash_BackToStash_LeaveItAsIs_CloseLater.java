@@ -48,8 +48,8 @@ public class TonixTestFlow_SoloStash_AddStash_BackToStash_LeaveItAsIs_CloseLater
         stashHomePage.verifyStashAchieved("₱1,000.00", "₱1,000.00");
         stashHomePage.verifyGoalAchieved();
         basePage.moveToPreviousPage(1);
-        tonikAccountBalance = mainPage.getTonikAccounBalance();
-		System.out.println("Balance:"+tonikAccountBalance);
+	    tonikAccountBalance = Utilities.subtractTwoAmount(tonikAccountBalance, "1000.00");
+	    System.out.println(tonikAccountBalance);
 		mainPage.clickTotalStashBalance();
 		ExtentReporter.jiraID = "TON-3";
 	}
