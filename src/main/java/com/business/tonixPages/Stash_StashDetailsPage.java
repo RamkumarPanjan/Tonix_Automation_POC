@@ -38,7 +38,7 @@ public class Stash_StashDetailsPage extends BasePage
 		extent.HeaderChildNode("stash Details");
 		String actualstashID = getText(Stash_StashDetailsSelectors.txtStashID);
 		System.out.println("Stash ID --->"+actualstashID);
-		dateComparison();
+		dateComparisonWithoutTime();
 		actualStartingDate= getText(Stash_StashDetailsSelectors.txtStartingDate);
 		System.out.println("Starting Date -->"+actualStartingDate);
 		softAssertion.assertEquals(formattedDate, actualStartingDate);
