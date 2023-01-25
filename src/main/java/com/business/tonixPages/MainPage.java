@@ -1,6 +1,7 @@
 package com.business.tonixPages;
 
 import com.android.selectors.MainSelectors;
+import com.utility.Utilities;
 
 public class MainPage extends BasePage {
 
@@ -68,9 +69,11 @@ public class MainPage extends BasePage {
             if(expectedBalance.endsWith(".0"))
             	expectedBalance = expectedBalance.replace(".0",".00");
             if(accountBalance.equals(expectedBalance)) {
+        		//System.out.println("Balance:"+accountBalance);
                 extent.extentLoggerPass("Tonix Account Balance", "Expected: "+accountBalance);
             } else {
                 extent.extentLoggerFail("Tonix Account Balance", "Actual: "+accountBalance+", Expected:"+expectedBalance);
+                System.out.println("Balance:"+accountBalance);
             }        	
         } else {
         	extent.extentLoggerFail("Your Tonix Account text", "Text 'Your Tonix Account' found in main page");
