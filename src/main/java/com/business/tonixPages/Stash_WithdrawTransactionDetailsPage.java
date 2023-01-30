@@ -52,7 +52,6 @@ public class Stash_WithdrawTransactionDetailsPage extends BasePage {
 			softAssertion.assertEquals(actualDate, when);
 			softAssertion.assertEquals(actualRefNumber.length()>5, true);
 			softAssertion.assertAll();
-
 			waitTime(2000);
 			//Back(1);
 		}

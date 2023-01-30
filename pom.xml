@@ -3,8 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>Tonix</groupId>
-	<artifactId>Tonix</artifactId>
+	<groupId>Tonik</groupId>
+	<artifactId>Tonik</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<repositories>
 		<repository>
@@ -109,11 +109,14 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-jdk14</artifactId>
 			<version>1.7.25</version>
 		</dependency>
+		
+		
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
@@ -285,7 +288,7 @@
 				<version>2.20</version>
 				<configuration>
 					<suiteXmlFiles>
-						<suiteXmlFile>tonix.xml</suiteXmlFile>
+						<suiteXmlFile>tonik.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>	
 			</plugin> 

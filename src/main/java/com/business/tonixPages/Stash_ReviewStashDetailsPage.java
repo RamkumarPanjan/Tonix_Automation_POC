@@ -58,6 +58,7 @@ public class Stash_ReviewStashDetailsPage extends BasePage{
 	{
 		extent.HeaderChildNode("Review Stash Details");
 		logger.info("Review Stash Details");
+
 		String targetAmountInCurrency = getText(Stash_ReviewStashDetailsSelectors.txtTargetAmountCurreny).substring(1);
 		System.out.println(targetAmountInCurrency);
 		String initialSavingCurrency = getText(Stash_ReviewStashDetailsSelectors.txtInitialSavingCurreny).substring(1);

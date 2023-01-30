@@ -16,8 +16,8 @@ public class MainPage extends BasePage {
     public void clickTotalStashBalance() throws Exception {
         extent.HeaderChildNode("Clicking Total Stash Balance in main page");
 
-        if(waitForElementToBePresent(MainSelectors.txtYourTonikAccount, 120,"Your Tonix Account text")) {
-            extent.extentLoggerPass("Your Tonix Account text", "Text 'Your Tonix Account' found in main page");
+        if(waitForElementToBePresent(MainSelectors.txtYourTonikAccount, 120,"Your Tonik Account text")) {
+            extent.extentLoggerPass("Your Tonik Account text", "Text 'Your Tonix Account' found in main page");
             waitTime(2000);
             Swipe("up", 1);
 
@@ -37,7 +37,7 @@ public class MainPage extends BasePage {
                 extent.extentLoggerFail("Navigate to Stashes", "Unable to click on Stashes link");
             }
         } else {
-            extent.extentLoggerFail("Your Tonix Account text", "Text 'Your Tonix Account' found in main page");
+            extent.extentLoggerFail("Your Tonik Account text", "Text 'Your Tonik Account' found in main page");
         }
     }
 
@@ -46,12 +46,12 @@ public class MainPage extends BasePage {
      */
     public String getTonikAccounBalance() throws Exception {
     	
-    	if(waitForElementToBePresent(MainSelectors.txtYourTonikAccount, 120,"Your Tonix Account text")) {
-            String accountBalance = getText(MainSelectors.txtTonixAccountBalance);
+    	if(waitForElementToBePresent(MainSelectors.txtYourTonikAccount, 120,"Your Tonik Account text")) {
+            String accountBalance = getText(MainSelectors.txtTonikAccountBalance);
             accountBalance = accountBalance.replace("₱","").replace(",","");
             return accountBalance;   		
     	} else {
-    		extent.extentLoggerFail("Your Tonix Account text", "Text 'Your Tonix Account' found in main page");
+    		extent.extentLoggerFail("Your Tonix Account text", "Text 'Your Tonik Account' found in main page");
     		return null;
     	}
     }
@@ -63,20 +63,20 @@ public class MainPage extends BasePage {
         extent.HeaderChildNode("Verify Tonix Account Balance");
         waitTime(2000);
         
-        if(waitForElementToBePresent(MainSelectors.txtYourTonikAccount, 120,"Your Tonix Account text")) {
-            String accountBalance = getText(MainSelectors.txtTonixAccountBalance);
+        if(waitForElementToBePresent(MainSelectors.txtYourTonikAccount, 120,"Your Tonik Account text")) {
+            String accountBalance = getText(MainSelectors.txtTonikAccountBalance);
             accountBalance = accountBalance.replace("₱","").replace(",","");
             if(expectedBalance.endsWith(".0"))
             	expectedBalance = expectedBalance.replace(".0",".00");
             if(accountBalance.equals(expectedBalance)) {
         		//System.out.println("Balance:"+accountBalance);
-                extent.extentLoggerPass("Tonix Account Balance", "Expected: "+accountBalance);
+                extent.extentLoggerPass("Tonik Account Balance", "Expected: "+accountBalance);
             } else {
-                extent.extentLoggerFail("Tonix Account Balance", "Actual: "+accountBalance+", Expected:"+expectedBalance);
+                extent.extentLoggerFail("Tonik Account Balance", "Actual: "+accountBalance+", Expected:"+expectedBalance);
                 System.out.println("Balance:"+accountBalance);
             }        	
         } else {
-        	extent.extentLoggerFail("Your Tonix Account text", "Text 'Your Tonix Account' found in main page");
+        	extent.extentLoggerFail("Your Tonik Account text", "Text 'Your Tonik Account' found in main page");
         }
         
 

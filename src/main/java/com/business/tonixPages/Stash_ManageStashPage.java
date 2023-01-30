@@ -135,6 +135,7 @@ public class Stash_ManageStashPage extends BasePage {
 		extent.HeaderChildNode("Click on stay on the pop-up for closing the stash");
 		waitTime(2000);
 		ConfirmationCloseStashPopUP();
+		waitTime(2000);
 		clickClose();
 		if(verifyElementPresent(Stash_ManageStashSelectors.txtYesCloseStash, "Yes close the Stash"))
 		{
@@ -156,9 +157,9 @@ public class Stash_ManageStashPage extends BasePage {
 			click(Stash_ManageStashSelectors.btnStay, "stay Button");
 			extent.extentLoggerPass("Pop-Up closed ","Close the stash pop-up is closed successfully");
 		}
-		if(verifyElementPresent(Stash_ManageStashSelectors.txtAreYouSureConfirmation, "Pop-up is closed, Are you sure ,You want to close the stash "))
+		if(verifyElementPresent(Stash_ManageStashSelectors.txtManageStash, "Pop-up is closed, Are you sure ,You want to close the stash "))
 		{
-			extent.extentLoggerPass("Pop-Up closed","Close the stash pop-up is closed successfully");
+			extent.extentLoggerPass("Manage Stash' page loaded successfully","Close the stash pop-up is closed successfully");
 		}
 		else
 		{

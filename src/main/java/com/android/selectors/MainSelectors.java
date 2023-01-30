@@ -14,7 +14,7 @@ public class MainSelectors {
     
     public static By textStashes =By.xpath("//*[@class='android.widget.TextView' and @text='Stashes']");
 
-	public static By txtTonixAccountBalance = By.xpath("//android.widget.TextView[@text='Your tonik account']/following-sibling::android.widget.TextView[1]");
+	public static By txtTonikAccountBalance = By.xpath("//android.widget.TextView[@text='Your tonik account']/following-sibling::android.widget.TextView[1]");
 
     //
 	

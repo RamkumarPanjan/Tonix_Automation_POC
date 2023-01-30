@@ -1,11 +1,11 @@
-package com.tonix.testScripts;
+package com.tonik.testScripts;
 
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.extent.ExtentReporter;
 import com.utility.Utilities;
 
-public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash extends BaseTestCase {
+public class TonikTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash extends BaseTestCase {
 
 	public String tonikAccountBalance;
 	public String tonikNewAccountBalance;
@@ -25,7 +25,7 @@ public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
 		setInitialSavingPage.clickOnSkipForNow();
 		reviewStashDetailsPage.verifyDetailsAndCreateStash();
 		soloStashCreatedPage.soloStashCreated();
-		//ExtentReporter.jiraID = "TON-2";
+		ExtentReporter.jiraID = "TON-2";
 	}
 
 	@Test(priority = 1)
@@ -45,11 +45,11 @@ public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
 		manageStashPage.clickModify();
 		modifyStashPage.modifyStashName(prop.getproperty("educationStash"), "AB");
 		modifyStashPage.verifyStashNameErrorMessage();
-		//ExtentReporter.jiraID = "TON-15";
+		ExtentReporter.jiraID = "TON-15";
 		modifyStashPage.modifyStashName("AB", prop.getproperty("travellingStash"));
 		updatedStashPage.verifyUpdatedStashConfirmationMessage();
 		stashHomePage.getStashName(prop.getproperty("travellingStash"));
-		//ExtentReporter.jiraID = "TON-10";
+		ExtentReporter.jiraID = "TON-10";
 	}	
 
 	@Test(priority = 3)
@@ -58,11 +58,11 @@ public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
 		manageStashPage.clickModify();
 		modifyStashPage.modifyStashAmount("1,000.00", "900");
 		modifyStashPage.verifyStashAmountErrorMessage();
-		//ExtentReporter.jiraID = "TON-14";
+		ExtentReporter.jiraID = "TON-14";
 		modifyStashPage.modifyStashAmount("900", "1500");
 		updatedStashPage.verifyUpdatedStashConfirmationMessage();
 		stashHomePage.verifyStashAchieved("₱750.00", "₱1,500.00");
-		//ExtentReporter.jiraID = "TON-11";
+		ExtentReporter.jiraID = "TON-11";
 	}
 
 
@@ -78,7 +78,7 @@ public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
 		stashHomePage.moveToPreviousPage(1);
 	    tonikAccountBalance = Utilities.subtractTwoAmount(tonikAccountBalance, "1500.00");
 	    System.out.println(tonikAccountBalance);
-		//	ExtentReporter.jiraID = "TON-3";
+	    ExtentReporter.jiraID = "TON-3";
 	}	
 
 
@@ -103,7 +103,7 @@ public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
 		mainPage.verifyTonikAccountBalance(newBalance);
 		mainPage.clickTotalStashBalance();
 
-		//ExtentReporter.jiraID = "TON-13";
+		ExtentReporter.jiraID = "TON-13";
 	}
 
 	@Test(priority=6)
@@ -112,7 +112,7 @@ public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
 		manageStashPage.clickStashDetails();
 		stashDetailsPage.stashDetails("₱1,500.00");
 		basePage.moveToPreviousPage(1);
-	//	ExtentReporter.jiraID = "TON-12";
+		ExtentReporter.jiraID = "TON-12";
 
 	}
 
@@ -123,7 +123,7 @@ public class TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
 		manageStashPage.clickClose();
 		manageStashPage.clickStayAndCloseStashConfirmation();
 		stashClosePage.brokeTheStash();
-		//	ExtentReporter.jiraID = "TON-8";
+		ExtentReporter.jiraID = "TON-8";
 
 	}
 }

@@ -1,10 +1,10 @@
-package com.tonix.testScripts;
+package com.tonik.testScripts;
 
 import org.testng.annotations.Test;
 import com.extent.ExtentReporter;
 import com.utility.Utilities;
 
-public class TonixTestFlow_SoloStash_AddStash_BackToStash_LeaveItAsIs_CloseLater extends BaseTestCase {
+public class TonikTestFlow_SoloStash_AddStash_BackToStash_LeaveItAsIs_CloseLater extends BaseTestCase {
 	
 	public String tonikAccountBalance;
 	public String tonikNewAccountBalance;

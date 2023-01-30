@@ -1,6 +1,5 @@
 package com.business.tonixPages;
 
-import com.android.selectors.Stash_CongratsGoalAchievedSelectors;
 import com.android.selectors.Stash_SetUpTimeDepositSelectors;
 
 public class Stash_SetUpTimeDepositPage extends BasePage{

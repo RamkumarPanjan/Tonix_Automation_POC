@@ -1,8 +1,6 @@
 package com.business.tonixPages;
 
-import com.android.selectors.Stash_CongratsGoalAchievedSelectors;
 import com.android.selectors.Stash_HowMuchWillYouInvestSelectors;
-import com.android.selectors.Stash_WithdrawConfirmationSelectors;
 
 public class Stash_HowMuchWillYouInvestPage extends BasePage {
 	

@@ -1,8 +1,5 @@
 package com.business.tonixPages;
 
-import com.android.selectors.Stash_CongratsGoalAchievedSelectors;
-import com.android.selectors.Stash_MoneyStashSelectors;
-import com.android.selectors.Stash_WithdrawConfirmationSelectors;
 import com.android.selectors.Stash_WootWootSelectors;
 
 public class Stash_WootWootPage extends BasePage {

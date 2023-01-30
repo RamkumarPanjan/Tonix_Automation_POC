@@ -51,8 +51,6 @@ public class BasePage extends Utilities {
 		init();
 	}
 
-
-	RingPay_TestData_DataProvider dataProvider = new RingPay_TestData_DataProvider();
 	public int timeout;
 	SoftAssert softAssertion = new SoftAssert();
 	boolean launch = "" != null;

@@ -17,8 +17,4 @@ public class Stash_SetupYourStashSelectors {
 	
 	public static By btnNext=By.xpath("//*[@class='android.view.ViewGroup']/child::android.widget.TextView[@text='Next']");
 	
-	
-	
-	
-
 }

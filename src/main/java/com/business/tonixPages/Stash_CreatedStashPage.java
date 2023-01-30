@@ -29,8 +29,4 @@ public class Stash_CreatedStashPage extends BasePage{
 		softAssertion.assertEquals(creditAmount, actualCreditAmount);
 		softAssertion.assertAll();
 	}
-
-
-
-
 }

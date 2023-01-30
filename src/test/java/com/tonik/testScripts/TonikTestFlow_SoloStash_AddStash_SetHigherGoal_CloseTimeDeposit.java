@@ -1,10 +1,10 @@
-package com.tonix.testScripts;
+package com.tonik.testScripts;
 
 import org.testng.annotations.Test;
 import com.extent.ExtentReporter;
 import com.utility.Utilities;
 
-public class TonixTestFlow_SoloStash_AddStash_SetHigherGoal_CloseTimeDeposit extends BaseTestCase 
+public class TonikTestFlow_SoloStash_AddStash_SetHigherGoal_CloseTimeDeposit extends BaseTestCase 
 {
 	@Test(priority = 0)
     public void createStash() throws Exception {

@@ -2,7 +2,6 @@ package com.business.tonixPages;
 
 import com.android.selectors.Stash_SetInitialSavingSelectors;
 
-
 public class Stash_SetInitialSavingPage extends BasePage {
 	
 	public Stash_SetInitialSavingPage() throws InterruptedException {

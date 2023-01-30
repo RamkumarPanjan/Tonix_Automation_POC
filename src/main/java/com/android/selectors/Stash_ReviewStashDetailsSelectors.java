@@ -30,5 +30,7 @@ public class Stash_ReviewStashDetailsSelectors {
 	
 	public static By txtInterestRatePercentage=By.xpath("//*[@text=' Interest rate ']/following-sibling::android.widget.TextView");
 	
+	public static By txtStashNameForInBox=By.xpath("//*[@class='android.widget.TextView' and @text='Review Stash Details']/parent::android.view.ViewGroup/parent::android.view.ViewGroup/(child::android.view.ViewGroup)");
+	
 	public static By txtEachCustomerByPDIc=By.xpath("//*[@class='android.widget.TextView' and contains(@text,'Each customer is insured up to P500,000 by PDIC')]");
 }

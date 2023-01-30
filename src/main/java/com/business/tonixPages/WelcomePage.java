@@ -1,8 +1,5 @@
 package com.business.tonixPages;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.testng.AssertJUnit.assertNotNull;
-
 import org.testng.Assert;
 
 import com.android.selectors.WelcomeSelectors;

@@ -1,6 +1,5 @@
 package com.business.tonixPages;
 
-import com.android.selectors.LoginSelectors;
 import com.android.selectors.Stash_WithdrawFromYourStashSelectors;
 
 public class Stash_WithdrawFromYourStashPage extends BasePage {

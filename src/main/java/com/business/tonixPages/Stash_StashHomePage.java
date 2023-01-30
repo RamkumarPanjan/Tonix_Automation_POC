@@ -78,7 +78,7 @@ public class Stash_StashHomePage extends BasePage {
 
 	public void verifyStashAchieved(String achievedAmount, String targetAmount) throws InterruptedException, Exception {
 		extent.HeaderChildNode("Verify 'Achieved' text");	
-		waitTime(2000);
+		waitTime(5000);
 		if(waitForElementToBePresent(Stash_StashHomeSelectors.txtStash, 60, "'Achieved' text"))
 		{
 			String actualMessage = getText(Stash_StashHomeSelectors.txtAchieved);
