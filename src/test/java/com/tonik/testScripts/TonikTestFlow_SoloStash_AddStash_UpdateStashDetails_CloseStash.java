@@ -78,7 +78,11 @@ public class TonikTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
 		stashHomePage.moveToPreviousPage(1);
 	    tonikAccountBalance = Utilities.subtractTwoAmount(tonikAccountBalance, "1500.00");
 	    System.out.println(tonikAccountBalance);
+<<<<<<< HEAD:src/test/java/com/tonik/testScripts/TonikTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash.java
 	    ExtentReporter.jiraID = "TON-3";
+=======
+		ExtentReporter.jiraID = "TON-3";
+>>>>>>> 9aa9681657385786e10e3912444ab113821cf0d2:src/test/java/com/tonix/testScripts/TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash.java
 	}	
 
 
@@ -102,7 +106,10 @@ public class TonikTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
 		System.out.println(newBalance);
 		mainPage.verifyTonikAccountBalance(newBalance);
 		mainPage.clickTotalStashBalance();
+<<<<<<< HEAD:src/test/java/com/tonik/testScripts/TonikTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash.java
 
+=======
+>>>>>>> 9aa9681657385786e10e3912444ab113821cf0d2:src/test/java/com/tonix/testScripts/TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash.java
 		ExtentReporter.jiraID = "TON-13";
 	}
 
@@ -112,7 +119,11 @@ public class TonikTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash exte
 		manageStashPage.clickStashDetails();
 		stashDetailsPage.stashDetails("₱1,500.00");
 		basePage.moveToPreviousPage(1);
+<<<<<<< HEAD:src/test/java/com/tonik/testScripts/TonikTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash.java
 		ExtentReporter.jiraID = "TON-12";
+=======
+	    ExtentReporter.jiraID = "TON-12";
+>>>>>>> 9aa9681657385786e10e3912444ab113821cf0d2:src/test/java/com/tonix/testScripts/TonixTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash.java
 
 	}
 
