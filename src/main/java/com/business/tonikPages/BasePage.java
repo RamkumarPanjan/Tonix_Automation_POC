@@ -1,4 +1,4 @@
-package com.business.tonixPages;
+package com.business.tonikPages;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.testng.AssertJUnit.assertNotNull;

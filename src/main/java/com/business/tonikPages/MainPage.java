@@ -1,4 +1,4 @@
-package com.business.tonixPages;
+package com.business.tonikPages;
 
 import com.android.selectors.MainSelectors;
 import com.utility.Utilities;
@@ -60,7 +60,7 @@ public class MainPage extends BasePage {
      * verify the tonix account balance
      */
     public void verifyTonikAccountBalance(String expectedBalance) throws Exception {
-        extent.HeaderChildNode("Verify Tonix Account Balance");
+        extent.HeaderChildNode("Verify Tonik Account Balance");
         waitTime(2000);
         
         if(waitForElementToBePresent(MainSelectors.txtYourTonikAccount, 120,"Your Tonik Account text")) {

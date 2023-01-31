@@ -1,4 +1,4 @@
-package com.business.tonixPages;
+package com.business.tonikPages;
 
 import com.android.selectors.LoginSelectors;
 import org.testng.Assert;

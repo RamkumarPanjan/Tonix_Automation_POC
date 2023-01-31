@@ -1,4 +1,4 @@
-package com.business.tonixPages;
+package com.business.tonikPages;
 
 import com.android.selectors.Stash_HowMuchWillYouInvestSelectors;
 
