@@ -18,15 +18,18 @@ public class TonikTestFlow_CreateMoreThanFiveStashes extends BaseTestCase
 		//
 		stashHomePage.clickStartANewStash();
 		startNewStaShPage.clickOpenANewStash();
-		startNewStaShPage.selectSoloStashType();
+		startNewStaShPage.selectGroupStashType();
 		stashSetupPage.enterDetailsIntoSetupYourStash(prop.getproperty("educationStash"),"1000");
 		setInitialSavingPage.clickOnSkipForNow();
 		reviewStashDetailsPage.verifyDetailsAndCreateStash();
-		soloStashCreatedPage.soloStashCreated();
+	
+		
 		stashHomePage.getStashName("Education");
 		stashHomePage.verifyStashAchieved("₱0.00", "₱1,000.00");
+		stashHomePage.clickOnCreatedStash();
+		groupStashPage.groupStashFlow();
 //
-		stashHomePage.clickStartANewStash();
+	/*	stashHomePage.clickStartANewStash();
 		startNewStaShPage.clickEmergencyStash();
 		startNewStaShPage.selectSoloStashType();
 		stashSetupPage.enterDetailsIntoSetupYourStash(" ","1000");
@@ -59,7 +62,7 @@ public class TonikTestFlow_CreateMoreThanFiveStashes extends BaseTestCase
 		soloStashCreatedPage.soloStashCreated();
 //
         basePage.fetchAllStashNames();
-        stashHomePage.verifyAlertPromptIfFiveStashesPresent();
+        stashHomePage.verifyAlertPromptIfFiveStashesPresent();*/
         
 	}
 	

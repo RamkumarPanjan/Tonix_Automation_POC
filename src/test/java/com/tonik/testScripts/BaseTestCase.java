@@ -41,6 +41,7 @@ public class BaseTestCase {
     protected com.business.tonikPages.Stash_CreatedStashPage createdStashPage;
     protected com.business.tonikPages.Stash_SetUpTimeDepositPage stashSetupTimeDepositPage;
     protected com.business.tonikPages.Stash_WootWootPage stashWootWootPage;
+    protected com.business.tonikPages.Stash_GroupStashPage groupStashPage;
     
     
     
@@ -81,10 +82,11 @@ public class BaseTestCase {
         createdStashPage=new com.business.tonikPages.Stash_CreatedStashPage();
         stashSetupTimeDepositPage=new com.business.tonikPages.Stash_SetUpTimeDepositPage();
         stashWootWootPage=new com.business.tonikPages.Stash_WootWootPage();
+        groupStashPage=new com.business.tonikPages.Stash_GroupStashPage();
     }
 
     @AfterClass
-    public void tonixAppQuit() throws Exception{
+    public void tonikAppQuit() throws Exception{
         basePage.TearDown();
     }
 }

@@ -1,5 +1,6 @@
 package com.tonik.testScripts;
 
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import com.extent.ExtentReporter;
 import com.utility.Utilities;
@@ -10,7 +11,8 @@ public class TonikTestFlow_SoloStash_AddStash_BackToStash_LeaveItAsIs_CloseLater
 	public String tonikNewAccountBalance;
 
 	@Test(priority = 0)
-    public void createStash() throws Exception {
+	@Parameters({"targetAmount"})
+    public void createStash(String targetAmount) throws Exception {
 		//welcomePage.RingPayAppLaunch();
 		loginPage.performLogin();
 		tonikAccountBalance = mainPage.getTonikAccounBalance();
@@ -20,7 +22,7 @@ public class TonikTestFlow_SoloStash_AddStash_BackToStash_LeaveItAsIs_CloseLater
 	    stashHomePage.clickStartANewStash();
 		startNewStaShPage.clickOpenANewStash();
 		startNewStaShPage.selectSoloStashType();
-		stashSetupPage.enterDetailsIntoSetupYourStash(prop.getproperty("educationStash"),"1000");
+		stashSetupPage.enterDetailsIntoSetupYourStash(prop.getproperty("educationStash"),targetAmount);
 		setInitialSavingPage.clickOnSkipForNow();
 		reviewStashDetailsPage.verifyDetailsAndCreateStash();
 		soloStashCreatedPage.soloStashCreated();
@@ -28,11 +30,12 @@ public class TonikTestFlow_SoloStash_AddStash_BackToStash_LeaveItAsIs_CloseLater
 	}
 
 	@Test(priority = 1)
-	public void addToStash() throws Exception {
+	@Parameters({"stashAmount"})
+	public void addToStash(String stashAmount) throws Exception {
 		// Nithya
 		stashHomePage.clickAddToStash();
 		stashAddToStashPage.addToStash("500");
-		stashConfirmTransferToStashPage.confirmTransferToStash("₱500.00", prop.getproperty("mainAccount"),prop.getproperty("educationStash"),prop.getproperty("ownerStash"));
+		stashConfirmTransferToStashPage.confirmTransferToStash(stashAmount, prop.getproperty("mainAccount"),prop.getproperty("educationStash"),prop.getproperty("ownerStash"));
         stashMoneyStashPage.moneyStashed();
         stashHomePage.verifyStashAchieved("₱500.00", "₱1,000.00");
 		ExtentReporter.jiraID = "TON-3";
