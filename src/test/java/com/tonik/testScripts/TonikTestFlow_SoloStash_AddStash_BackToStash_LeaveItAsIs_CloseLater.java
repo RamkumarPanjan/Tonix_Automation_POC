@@ -13,7 +13,7 @@ public class TonikTestFlow_SoloStash_AddStash_BackToStash_LeaveItAsIs_CloseLater
 	@Test(priority = 0)
 	@Parameters({"targetAmount"})
     public void createStash(String targetAmount) throws Exception {
-		//welcomePage.RingPayAppLaunch();
+		
 		loginPage.performLogin();
 		tonikAccountBalance = mainPage.getTonikAccounBalance();
 		System.out.println("Balance:"+tonikAccountBalance);

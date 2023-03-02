@@ -21,8 +21,7 @@
 	<parameter name="lessThanInputAmount" value="900" />
 	<parameter name="modifiedAfterAmount" value="1500" />
 	<parameter name="AchievedModifiedAmount" value="₱1,500.00" />
-	<parameter name="modifiedAddOrSubstractTonikAmount"
-		value="1500.00" />
+	<parameter name="modifiedAddOrSubstractTonikAmount" value="1500.00" />
 	<parameter name="BeforeWithDrawnAmount" value="1,500.00" />
 	<parameter name="moreThanWithdrawnAmount" value="2000" />
 	<parameter name="withDrawnAmount" value="1500" />
@@ -34,12 +33,14 @@
 
 	<test name="Tonik">
 		<classes>
-			<class name="com.tonik.testScripts.TonikTestFlow_SoloStash_AddStash_SetHigherGoal_CloseTimeDeposit" />
+			<class name="com.tonik.testScripts.TonikTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash"/> 
 			
 		</classes>
 	</test>
-	<!-- <test name="Tonik1"> <classes> <class name="com.tonik.testScripts.TonikTestFlow_SoloStash_AddStash_Withdraw_CloseStash" 
-		/> <class name="com.tonik.testScripts.TonikTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash"/> 
+	<!-- <test name="Tonik1">
+	 <classes> 
+	     <class name="com.tonik.testScripts.TonikTestFlow_SoloStash_AddStash_Withdraw_CloseStash" />
+	     <class name="com.tonik.testScripts.TonikTestFlow_SoloStash_AddStash_UpdateStashDetails_CloseStash"/> 
 		<class name="com.tonik.testScripts.TonikTestFlow_SoloStash_AddStash_BackToStash_LeaveItAsIs_CloseLater"/> 
 		<class name="com.tonik.testScripts.TonikTestFlow_SoloStash_AddStash_SetHigherGoal_CloseTimeDeposit"/> 
 		</classes> </test> -->
