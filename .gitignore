@@ -6,3 +6,4 @@ target/
 test-output/
 *.class
 test-output/
+.idea/

@@ -1,0 +1,3 @@
+This is a update example fo git merge
+
+Added in master
